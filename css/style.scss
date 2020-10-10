@@ -1,0 +1,572 @@
+//Fonts
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+$main_font:'Montserrat', sans-serif;
+$body_font:'Open Sans', sans-serif;
+
+
+//Colors
+$dark_blue: #0C1632;
+$light_blue: #0582BE;
+$blue:  #153667;
+$orange: #E36924;
+
+//General
+body {
+    margin: 0;
+    font-family: $body_font;
+}
+
+.link {
+    position: relative;
+    margin: auto;
+    display: inline-block;
+    background: $light_blue;
+    border-radius: 40px;
+    padding: 10px 40px;
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.2s ease;
+
+    &:hover {
+        background: $dark_blue;
+        text-decoration: none;
+        color: #fff;
+    }
+
+    &.secundary {
+        background: #fff;
+        border: 1px solid $light_blue;
+        color: $light_blue;
+
+        &:hover {
+            background: $light_blue;
+            color: #fff;
+        }
+    }
+
+    &.small {
+        font-size: 12px;
+        padding: 10px 20px;
+    }
+}
+
+
+
+//Layout
+.app {
+    display: grid;
+    grid-template-columns: 290px auto;
+    min-height: 100vh;
+
+    .sidebar {
+        position: fixed;
+        height: 100vh;
+        background: $dark_blue;
+        grid-column: 1/2;
+        z-index: 100;
+        box-shadow: 7px 0 14px rgba(black, 0.29);
+
+        .logo {
+            img {
+                width: 100%;
+            }
+        }
+
+        ul {
+            margin-top: 50px;
+            li {
+                a {
+                    color: #fff;
+                    text-transform: uppercase;
+                    padding: 15px 20px;
+                    padding-left: 40px;
+                    display: block;
+                    text-decoration: none;
+                    transition: all 0.2s ease;
+
+                    &:hover, &.active {
+                        background: $orange;
+                    }
+                    
+                    img {
+                        margin-right: 10px;
+                    }
+                }
+            }
+        }
+    }
+
+    .main {
+        position: relative;
+        grid-column: 2/3;
+
+        .top {
+            background: rgb(36,135,227);
+            background: linear-gradient(133deg, rgba(36,135,227,1) 55%, rgba(89,182,177,1) 100%);   
+            padding: 15px 10px;
+            color: #fff;
+            text-align: right;
+
+            a {
+                color: #ffffff;
+                text-decoration: none;
+            }
+
+            .user, .credit, .logout {
+                display: inline;
+                margin: 0 10px;
+                text-transform: uppercase;
+            }
+
+            .user {
+                a {
+                    font-weight: bold;
+                }
+            }
+
+            .credit {
+                font-weight: lighter;
+            }
+
+            .logout {
+                padding-left: 20px;
+                border-left: 1px solid #fff;
+            }
+        }
+
+        header {
+            background: $blue;
+            text-align: center;
+            padding-top: 50px;
+            padding-bottom: 40px;
+
+            h1 {
+                margin: 0;
+                color: #fff;
+                text-transform: uppercase;
+            }
+
+            p {
+                color: #fff;
+                font-size: 26px;
+                font-weight: lighter;
+            }
+        }
+
+        .main_content {
+            padding: 20px 100px;
+            padding-bottom: 100px;
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: $light_blue;
+            z-index: 1000;
+            padding: 10px 0;
+
+            p {
+                margin: 0;
+                color: #fff;
+                text-transform: uppercase;
+                font-size: 12px;
+            }
+        }
+    }
+}
+
+
+//Auth
+
+.auth {
+    display: grid;
+    grid-template-columns: auto 550px;
+    height: 100vh;
+
+    .hero {
+        position: relative;
+        background: url('../images/login_bg.png') no-repeat;
+        background-size: cover;
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(158deg, rgba(89,182,177,1) 23%, rgba(36,135,227,1) 79%);
+            z-index: -1;
+        }
+
+        h1, h2 {
+            color: #fff;
+        }
+
+        h1 {
+            font-family: $main_font;
+            font-weight: 900;
+            font-size: 54px;
+            font-style: italic;
+            letter-spacing: 0.1rem;
+        }
+
+        h2 {
+            font-weight: lighter;
+            font-style: italic;
+            font-size: 32px;
+            font-family: $body_font;
+        }
+
+        header {
+            margin-top: 100px;
+            margin-left: 100px;
+            margin-bottom: 50px;
+        }
+
+        img.main_img {
+            display: block;
+            margin: auto;
+        }
+
+        img.bottom {
+            position: absolute;
+            bottom: 20px;
+            right: 40px;
+            width: 200px;
+        }
+    }
+
+    .main_panel {
+        background: #F1F1F1;
+        box-shadow: 0 -5px 14px rgba($color: #000000, $alpha: 0.30);
+
+        .login_logo {
+            margin-bottom: 70px;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: $light_blue;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 30px;
+        }
+
+        form {
+            position: relative;
+            width: 80%;
+            margin: auto;
+
+            input {
+                margin-bottom: 20px;
+                border: none;
+            }
+
+            input[type='submit']{
+                background: $orange;
+                color: #fff;
+                text-transform: uppercase;
+                font-weight: bold;
+                transition: all 0.2s ease;
+
+                &:hover {
+                    background: $light_blue;
+                }
+            }
+        }
+
+        .forgot_password {
+            text-align: center;
+            color: $light_blue;
+            display: block;
+        }
+    }
+}
+
+// Cargar Documentos
+
+#drop-area {
+    border: 2px dashed #ccc;
+    border-radius: 20px;
+    width: 480px;
+    margin: 50px auto;
+    padding: 40px 20px;
+    text-align: center;
+
+    img.icon {
+        margin-bottom: 20px;
+        transition: all 0.6s ease;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+
+    p {
+        font-weight: bold;
+        font-size: 20px;
+        color: #878787;
+        text-transform: uppercase;
+    }
+  }
+  #drop-area.highlight {
+    border-color: $light_blue;
+  }
+  .files_form {
+    margin-bottom: 10px;
+  }
+  #gallery {
+    margin-top: 10px;
+  }
+  #gallery img {
+    width: 150px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+  .button {
+    display: inline-block;
+    padding: 10px 40px;
+    background: #fff;
+    cursor: pointer;
+    border-radius: 40px;
+    border: 1px solid $light_blue;
+    color: $light_blue;
+    text-transform: uppercase;
+    font-size: 12px;
+  }
+  .button:hover {
+    background: $light_blue;
+    color: #fff;
+  }
+  #fileElem {
+    display: none;
+  }
+
+  // Home Firmantes
+  .signers_home {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(3, auto);
+      justify-content: center;
+      margin: auto;
+      padding-top: 50px;
+
+      .signers_home_item {
+        margin: 0 20px;
+        transition: all 0.3s ease;
+
+        &:hover {
+            transform: scale(1.05);
+
+            span.img {
+                box-shadow: 0 4px 10px rgba(black, 0.35);
+                background: $blue;
+            }
+        }
+
+        a {
+            display: grid;
+            text-decoration: none;
+        }
+
+        span.img {
+            display: block;
+            background: $light_blue;
+            width: 200px;
+            height: 200px;
+            border-radius: 100%;
+            margin-bottom: 20px; 
+            overflow: hidden;
+            display: grid;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 4px rgba(black, 0.25);
+            transition: all 0.3s ease;
+        }
+        span.name {
+            text-align: center;
+            display: block;
+            color: $light_blue;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 20px;
+        }
+      }
+
+      .link_wrapper {
+          grid-column: 1/-1;
+          margin-top: 50px;
+      }
+  }
+
+  // Agregar Firmantes
+
+  .signers_box {
+      box-shadow: 0 0 20px rgba($color: #000000, $alpha: 0.2);
+      border-radius: 20px;
+      position: relative;
+      width: 100%;
+      max-width: 900px;
+      margin: auto;
+
+      h2 {
+          background: $orange;
+          text-align: center;
+          color: #fff;
+          text-transform: uppercase;
+          font-size: 18px;
+          padding: 15px 0;
+          border-top-left-radius: 20px;
+          border-top-right-radius: 20px;
+      }
+
+      .signers_box_inner {
+          padding: 40px;
+      }
+
+      .steps_header {
+          margin-bottom: 20px;
+          border-bottom: 1px solid $light_blue;
+
+          ul {
+              li {
+                  color: #8C8C8C;
+                  font-size: 18px;
+                  font-weight: bold;
+
+                  &.active {
+                      color: $light_blue;
+
+                      span {
+                          border-color: $light_blue;
+                          background: $light_blue;
+                          color: #fff;
+                      }
+                  }
+
+                  span {
+                      border: 1px solid #8C8C8C;
+                      padding: 5px;
+                      padding-top: 1px;
+                      border-radius: 100%;
+                      width: 30px;
+                      height: 30px;
+                      display: inline-block;
+                      text-align: center;
+                      margin-right: 5px;
+                  }
+              }
+          }
+      }
+
+      .steps {
+          position: relative;
+          visibility: hidden;
+          right: -100px;
+          height: 0;
+          opacity: 0;
+          overflow: hidden;
+          transition: all 0.2s ease;
+
+        &.active {
+            visibility: visible;
+            opacity: 1;
+            right: 0;
+            height: auto;
+        }
+
+        .step_content {
+            padding: 0 20px;
+        }
+
+        &.step_1 {
+            .sender {
+                p {
+                    color: $dark_blue;
+                }
+
+                .name {
+                    font-weight: bold;
+                    margin-bottom: 5px;
+                }
+                .id {
+                    font-weight: lighter;
+                }
+            }
+        }
+
+        &.step_2 {
+            .signers_form {
+
+                .form-group {
+                    margin-bottom: 30px;
+                    padding: 20px;
+                    padding-bottom: 30px;
+                    border-bottom: 1px solid $light_blue;
+                }
+
+                label {
+                    color: $dark_blue;
+                }
+
+                input {
+                    margin-bottom: 20px;
+                }
+            }
+
+            @keyframes show {
+                from {
+                    opacity: 0;
+                    top: -30px;
+                    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+                }
+                to {
+                    opacity: 1;
+                    top: 0;
+                    box-shadow: 0 0 0 rgba(0,0,0,0);;
+                }
+              }
+            
+              .new_form_row {
+                  position: relative;
+                  animation-name: show;
+                  animation-duration: 0.8s;
+              }
+
+            .time_term {
+                margin-bottom: 40px;
+                margin-top: 30px;
+            }
+        }
+          
+        .buttons {
+            padding-top: 20px;
+            border-top: 1px solid $light_blue;
+            display: grid;
+            grid-template-columns: auto auto;
+
+            .right {
+                justify-self: end;
+            }
+            .left {
+                justify-self: start;
+            }
+        }
+      }
+
+      
+  }
+
+

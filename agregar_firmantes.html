@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Firma Seguro</title>
+    <link rel="shortcut icon" href="">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">    
+
+    <!--[if IE]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    
+    <div class="app">
+        <div class="sidebar">
+            <div class="logo">
+                <img src="images/logo.jpg" alt="">
+            </div>
+            <nav class="main_nav">
+                <ul class="list-unstyled">
+                    <li><a href=""><img src="images/home.png" alt="">Inicio</a></li>
+                    <li><a href=""><img src="images/signatures.png" alt="">Mis Firmas</a></li>
+                    <li><a href=""><img src="images/contacts.png" alt="">Contactos</a></li>
+                    <li><a href=""><img src="images/billing.png" alt="">Facturación</a></li>
+                    <li><a class="active" href=""><img src="images/upload_doc.png" alt="">Cargar Documentos</a></li>
+                    <li><a href=""><img src="images/documents.png" alt="">Documentos Estándar</a></li>
+                    <li><a href=""><img src="images/wallet.png" alt="">Recargra Saldo</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="main">
+            <div class="top">
+                <div class="user">
+                    <a href="">
+                        <i class="fas fa-user"></i>
+                        Juan
+                        <i class="fas fa-chevron-circle-down"></i>
+                    </a>
+                </div>
+
+                <div class="credit">
+                    Saldo $15.000
+                </div>
+
+                <div class="logout">
+                    <a href="">Salir <i class="fas fa-sign-out-alt"></i></a>
+                </div>
+            </div>
+
+            <div class="content">
+                <header>
+                    <h1>Documento Cargado</h1>
+                    <p>Ingresa la información de los firmantes</p>
+                </header>
+
+                <div class="main_content">
+                    <div class="signers_box">
+                        <h2>Agregar firmantes</h2>
+
+                        <div class="signers_box_inner">
+                            <div class="steps_header">
+                                <ul class="list-unstyled list-inline">
+                                    <li class="list-inline-item active">
+                                        <span>1</span>
+                                        Remitente
+                                        <img src="images/arrow.svg" alt="">
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <span>2</span>
+                                        Destinatarios
+                                        <img src="images/arrow.svg" alt="">
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <span>3</span>Mensaje
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="steps step_1">
+                                <div class="step_content">
+                                    <div class="sender">
+                                        <p class="name">Juan Carlos Gómez</p>
+                                        <p class="id">CC 1124987456</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="buttons">
+                                    <div class="left">
+                                        <a href="" class="link secundary"><i class="fas fa-chevron-left"></i> Atrás</a>
+                                    </div>
+                                    
+                                    <div class="right">
+                                        <a href="" class="link next">Destinatarios <i class="fas fa-chevron-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="steps step_2">
+                                <div class="step_content">
+                                    <form class="signers_form" action="">
+                                        <div class="form-group" id="signer_1">
+                                            <div class="row">
+                                                <div class="col-sm-4">
+                                                    <label for="">Nombres</label>
+                                                    <input type="text" class="form-control" value="Juan" required>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <label for="">Apellidos</label>
+                                                    <input type="text" class="form-control" value="Gómez" required>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <label for="">No. de Documento</label>
+                                                    <input type="text" class="form-control" value="1124987456" required>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-4">
+                                                    <label for="">Email</label>
+                                                    <input type="email" class="form-control" value="juan@gmail.com" required>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <label for="">celular</label>
+                                                    <input type="text" class="form-control" value="345 6789087" required>
+                                                </div>
+                                                <div class="col-sm-5">
+                                                    <label for="">Método de Validación</label>
+                                                    <select class="form-control" name="">
+                                                        <option value="">Preguntas de validación</option>
+                                                        <option value="">OTP</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        
+                                    </form>
+
+                                    <div class="add_signer">
+                                        <a href="" class="link secundary small clone_trigger">Agregar Firmante <i class="fas fa-user-plus"></i></a>
+                                    </div>
+
+                                    <div class="time_term">
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                                <div class="form-group">
+                                                    <label for="">Plazo para firmar</label>
+                                                    <select class="form-control" name="" id="">
+                                                    <option value="">1 día</option>
+                                                    <option value="">2 días</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="buttons">
+                                    <div class="left">
+                                        <a href="" class="link secundary prev"><i class="fas fa-chevron-left"></i> Atrás</a>
+                                    </div>
+                                    
+                                    <div class="right">
+                                        <a href="" class="link next">Mensaje <i class="fas fa-chevron-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="steps step_3">
+                                <div class="step_content">
+                                   <div class="form-group">
+                                        <label for="">Asunto</label>
+                                        <input type="text" class="form-control" value="Envío de firma" disabled>
+                                   </div>
+                                   <div class="form-group">
+                                        <label for="">Mensaje</label>
+                                        <textarea name="" id="" cols="30" rows="3" class="form-control"></textarea>
+                                   </div>
+                                </div>
+                                
+                                <div class="buttons">
+                                    <div class="left">
+                                        <a href="" class="link secundary prev"><i class="fas fa-chevron-left"></i> Atrás</a>
+                                    </div>
+                                    
+                                    <div class="right">
+                                        <a href="" class="link">Enviar a Firmantes <i class="fas fa-chevron-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <footer>
+                    <p class="text-center">
+                        Copyright Treda Solutions
+                    </p>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        const formRow = document.querySelector('.form-group');
+
+        function Clone(e){
+            e.preventDefault();
+            let rows = document.querySelectorAll('.form-group');
+            rows = Array.from(rows);
+            const rowsNum = Number(rows.length);
+            
+            const cloneRow = formRow.cloneNode(true);
+            cloneRow.classList.add('new_form_row');
+            cloneRow.id = 'signer_' + (rowsNum + 1);
+
+            const inputs = cloneRow.getElementsByTagName('input');
+            
+            Array.from(inputs).forEach(input => {
+                input.value = '';
+            })
+            document.querySelector('.signers_form').appendChild(cloneRow);
+            
+            cloneRow.scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+
+        const cloneTrigger = document.querySelector('.clone_trigger');
+        cloneTrigger.addEventListener('click', Clone);
+    </script>
+
+    <script>
+        const steps = document.querySelectorAll('.steps');
+
+        Array.from(steps).map((step, i) => {
+            if(i == 0){
+                step.classList.add('active');
+            }
+        })
+
+        const nextButton = document.querySelectorAll('.next');
+        const prevButton = document.querySelectorAll('.prev');
+
+        Array.from(nextButton).map(button => {
+            button.addEventListener('click', nextStep);
+        });
+        Array.from(prevButton).map(button => {
+            button.addEventListener('click', prevStep);
+        });
+
+        function nextStep(e){
+            e.preventDefault();
+            const stepActive = document.querySelector('.steps.active');
+            const stepHeaderActive = document.querySelector('.steps_header li.active');
+
+            stepActive.classList.remove('active');
+            stepHeaderActive.classList.remove('active');
+
+            stepActive.nextElementSibling.classList.add('active');
+            stepHeaderActive.nextElementSibling.classList.add('active');
+            window.scrollTo(0, top); 
+        }
+
+        function prevStep(e){
+            e.preventDefault();
+            const stepActive = document.querySelector('.steps.active');
+            const stepHeaderActive = document.querySelector('.steps_header li.active');
+
+            stepActive.classList.remove('active');
+            stepHeaderActive.classList.remove('active');
+
+            stepActive.previousElementSibling.classList.add('active');
+            stepHeaderActive.previousElementSibling.classList.add('active');
+
+            window.scrollTo(0, top);
+        }
+
+    </script>
+
+</body>
+</html>
