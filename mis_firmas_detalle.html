@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Firma Seguro</title>
+    <link rel="shortcut icon" href="">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.standalone.min.css" integrity="sha512-TQQ3J4WkE/rwojNFo6OJdyu6G8Xe9z8rMrlF9y7xpFbQfW5g8aSWcygCQ4vqRiJqFsDsE1T6MoAOMJkFXlrI9A==" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="css/style.css">    
+
+    <!--[if IE]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    
+    <div class="app">
+        <div class="sidebar">
+            <div class="logo">
+                <img src="images/logo.jpg" alt="">
+            </div>
+            <nav class="main_nav">
+                <ul class="list-unstyled">
+                    <li><a href=""><img src="images/home.png" alt="">Inicio</a></li>
+                    <li><a class="active" href=""><img src="images/signatures.png" alt="">Mis Firmas</a></li>
+                    <li><a href=""><img src="images/contacts.png" alt="">Contactos</a></li>
+                    <li><a href=""><img src="images/billing.png" alt="">Facturación</a></li>
+                    <li><a class="" href=""><img src="images/upload_doc.png" alt="">Cargar Documentos</a></li>
+                    <li><a href=""><img src="images/documents.png" alt="">Documentos Estándar</a></li>
+                    <li><a href=""><img src="images/wallet.png" alt="">Recargra Saldo</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="main">
+            <div class="top">
+                <div class="user">
+                    <a href="">
+                        <i class="fas fa-user"></i>
+                        Juan
+                        <i class="fas fa-chevron-circle-down"></i>
+                    </a>
+                </div>
+
+                <div class="credit">
+                    Saldo $15.000
+                </div>
+
+                <div class="logout">
+                    <button type="submit">Salir <i class="fas fa-sign-out-alt"></i></button>
+                </div>
+            </div>
+
+            <div class="content">
+                <header>
+                    <h1>Mis Firmas</h1>
+                </header>
+
+                <div class="body_overlay"></div>
+                <div class="edit_signer">
+                    <div class="close">
+                        <a href="">
+                            <i class="fas fa-times"></i>
+                        </a>
+                    </div>
+
+                    <h3>Editar Firmante</h3>
+
+                        <form action="">
+                            <label for="">Nombre</label>
+                            <input type="text" class="form-control" value="Pedro Alberto Pérez González">
+
+                            <label for="">Documento</label>
+                            <input type="text" class="form-control" value="123456789">
+
+                            <label for="">Email</label>
+                            <input type="email" class="form-control" value="pedroperez@gmail.com">
+
+                            <label for="">Celular</label>
+                            <input type="text" class="form-control" value="3001234567">
+
+                            <label for="">Método de Validación</label>
+                            <select class="form-control" name="">
+                                <option value="">Preguntas de validación</option>
+                                <option value="">OTP</option>
+                            </select>
+
+                            <button type="submit" class="form-control link">Guardar Firmante</button>
+                        </form>
+                </div>
+
+                <div class="main_content">
+                    <div class="signatures signatures_detail">
+                        <header>
+                            <h3>Firma 1234567890</h3>
+                            <a href="" class="back"><i class="fas fa-chevron-left"></i> Atrás</a>
+                        </header>
+
+                        <div class="links_group">
+                            <a href="" class="link secundary small">Rechazar</a>
+                            <a href="" class="link small">Firmar</a>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <h4>Solicitante</h4>
+                                <div class="signature_item">
+                                    <div class="box from">
+                                        <p><strong>Pedro Alberto Pérez González</strong> CC 123456789</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <h4>Documento</h4>
+                                <div class="signature_item">
+                                    <div class="box doc">
+                                        <span class="doc_name">
+                                            <a href="">Contrato-de-arrendamiento.pdf</a>
+                                        </span>
+                                        <span class="action">
+                                            <a href="" class="action_links"><i class="fas fa-search"></i></a>
+                                            <a href="" class="action_links"><i class="far fa-edit"></i></a>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <h4>Firmantes</h4>
+                            </div>
+
+                            <div class="col-sm-4">
+                                <div class="signature_item">
+                                    <div class="box signer">
+                                        <ul class="list-unstyled">
+                                            <li><strong>Pedro Alberto Pérez González</strong></li>  
+                                            <li>CC 123456789</li>
+                                            <li>Email:pedroperez@gmail.com</li>
+                                            <li>Celular: 3001234567</li>
+                                            <li>Método: OTP</li>
+                                            <li>Fecha de Firma: 2020-08-20</li>
+                                        </ul>
+
+                                        <div class="action_links">
+                                            <a href="" class="link secundary red small">
+                                                <i class="far fa-trash-alt"></i>
+                                            </a>
+                                            <a href="" class="link secundary small edit">
+                                                <i class="far fa-edit"></i>
+                                            </a>
+                                            <a href="" class="link secundary small">
+                                                <i class="far fa-share-square"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="tag declined">Rechazado</div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="signature_item">
+                                    <div class="box signer">
+                                        <ul class="list-unstyled">
+                                            <li><strong>Pedro Alberto Pérez González</strong></li>  
+                                            <li>CC 123456789</li>
+                                            <li>Email:pedroperez@gmail.com</li>
+                                            <li>Celular: 3001234567</li>
+                                            <li>Método: OTP</li>
+                                            <li>Fecha de Firma: 2020-08-20</li>
+                                        </ul>
+                                        <div class="action_links">
+                                            <a href="" class="link secundary red small">
+                                                <i class="far fa-trash-alt"></i>
+                                            </a>
+                                            <a href="" class="link secundary small edit">
+                                                <i class="far fa-edit"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="tag success">Firmado</div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="signature_item">
+                                    <div class="box signer">
+                                        <ul class="list-unstyled">
+                                            <li><strong>Pedro Alberto Pérez González</strong></li>  
+                                            <li>CC 123456789</li>
+                                            <li>Email:pedroperez@gmail.com</li>
+                                            <li>Celular: 3001234567</li>
+                                            <li>Método: OTP</li>
+                                            <li>Fecha de Firma: Pendiente</li>
+                                        </ul>
+                                        <div class="action_links">
+                                            <a href="" class="link secundary red small">
+                                                <i class="far fa-trash-alt"></i>
+                                            </a>
+                                            <a href="" class="link secundary small edit">
+                                                <i class="far fa-edit"></i>
+                                            </a>
+                                            <a href="" class="link secundary small">
+                                                <i class="far fa-share-square"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="tag pending">Sin Firmar</div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <footer>
+                    <p class="text-center">
+                        Copyright Treda Solutions
+                    </p>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js" integrity="sha512-T/tUfKSV1bihCnd+MxKD0Hm1uBBroVYBOYSk1knyvQ9VyZJpc/ALb4P0r6ubwVPSGB2GvjeoMAJJImBG12TiaQ==" crossorigin="anonymous"></script>
+
+    <!-- Datepickker setup -->
+    <script>
+        $('.datepicker').datepicker({
+            format: 'mm/dd/yyyy',
+            startDate: '-3d'
+        });
+    </script>
+
+    <!-- Signer edit panel -->
+    <script>
+        const closeTrigger = document.querySelector('.close a');
+        let editTriggers = document.querySelectorAll('.edit');
+        editTriggers = Array.from(editTriggers);
+        const overlay = document.querySelector('.body_overlay');
+        const editSigner = document.querySelector('.edit_signer');
+        const editSignerOpen = document.querySelector('.edit_signer.open');
+
+        closeTrigger.addEventListener('click', (e) => {
+            e.preventDefault();
+            editSigner.classList.remove('open');
+            overlay.classList.remove('active');
+        });
+
+        overlay.addEventListener('click', (e) => {
+            e.preventDefault();
+            editSigner.classList.remove('open');
+            overlay.classList.remove('active');
+        });
+
+        editTriggers.map(editTrigger => {
+            editTrigger.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    editSigner.classList.add('open');
+                    overlay.classList.add('active');
+            });
+        });
+
+            
+    </script>
+
+</body>
+</html>

@@ -11,6 +11,7 @@ $dark_blue: #0C1632;
 $light_blue: #0582BE;
 $blue:  #153667;
 $orange: #E36924;
+$grey: #575757;
 
 //General
 body {
@@ -24,6 +25,7 @@ body {
     display: inline-block;
     background: $light_blue;
     border-radius: 40px;
+    border: 1px solid $light_blue;
     padding: 10px 40px;
     color: #fff;
     text-transform: uppercase;
@@ -34,10 +36,11 @@ body {
         background: $dark_blue;
         text-decoration: none;
         color: #fff;
+        border-color: $blue;
     }
 
     &.secundary {
-        background: #fff;
+        background: transparent;
         border: 1px solid $light_blue;
         color: $light_blue;
 
@@ -49,7 +52,16 @@ body {
 
     &.small {
         font-size: 12px;
-        padding: 10px 20px;
+        padding: 7px 20px;
+    }
+
+    &.red {
+        color: red;
+        border-color: red;
+
+        &:hover {
+            background-color:red;
+        }
     }
 }
 
@@ -134,6 +146,18 @@ body {
             .logout {
                 padding-left: 20px;
                 border-left: 1px solid #fff;
+
+                button {
+                    border: none;
+                    background: none;
+                    text-transform: uppercase;
+                    color: #fff;
+                    transition: all 0.2s ease;
+
+                    &:hover {
+                        color: $blue;
+                    }
+                }
             }
         }
 
@@ -147,6 +171,7 @@ body {
                 margin: 0;
                 color: #fff;
                 text-transform: uppercase;
+                font-weight: bold;
             }
 
             p {
@@ -159,6 +184,12 @@ body {
         .main_content {
             padding: 20px 100px;
             padding-bottom: 100px;
+
+            header {
+                margin: 0;
+                padding: 0;
+                background: none;
+            }
         }
 
         footer {
@@ -167,7 +198,7 @@ body {
             left: 0;
             width: 100%;
             background: $light_blue;
-            z-index: 1000;
+            z-index: 100;
             padding: 10px 0;
 
             p {
@@ -565,8 +596,327 @@ body {
             }
         }
       }
-
-      
   }
 
+// Mis Firmas
 
+.signatures {
+    padding-top: 40px;
+
+    form {
+        margin-bottom: 30px;
+
+        input.form-control {
+            border-right: none;
+        }
+
+        .input-group-append {
+            .input-group-text {
+                background: none;
+                border-left: none;
+            }
+        }
+    }
+
+    table.table {
+        thead {
+            th {
+                border-top: none;
+                border-bottom-color: $light_blue;
+                color: $light_blue;
+                font-size: 18px;
+            }
+        }
+
+        tbody {
+            td {
+                color: #616161;
+                border: none;
+
+                .state {
+                    position: relative;
+                    width: 100%;
+                    height: 8px;
+                    background: rgb(169, 169, 169);
+                    display: block;
+
+                    &:after {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        display: block;
+                        height: 100%;
+                    }
+
+                    &.started {
+                        &:after {
+                            background-color: rgb(84, 84, 84);
+                            width: 20%;
+                        }
+                    }
+
+                    &.created {
+                        &:after {
+                            background-color:$light_blue;
+                            width: 20%;
+                        }
+                    }
+
+                    &.declined {
+                        &:after {
+                            background-color:red;
+                            width: 100%;
+                        }
+                    }
+
+                    &.processing {
+                        &:after {
+                            background-color:orange;
+                            width: 50%;
+                        }
+                    }
+
+                    &.successful {
+                        &:after {
+                            background-color:green;
+                            width: 100%;
+                        }
+                    }
+                }
+
+                &.started {
+                    color: rgb(84, 84, 84);
+                }
+
+                &.created {
+                    color:$light_blue;
+                }
+
+                &.declined {
+                    color:red;
+                }
+
+                &.processing {
+                    color:orange;
+                }
+
+                &.successful {
+                    color:green;
+                }
+            }
+        }
+    }
+}
+
+// Mis Firmas Detalle
+
+.signatures_detail {
+
+    header {
+        display: grid;
+        grid-template-columns: auto auto;
+        border-bottom: 1px solid $light_blue;
+
+        h3 {
+            justify-self: start;
+            color: $light_blue;
+            font-weight: bold;
+        }
+
+        a {
+            justify-self: end;
+            color: $light_blue;
+            text-decoration: none;
+            font-weight: bold;
+
+            i {
+                color: inherit;
+            }
+
+            &:hover {
+                color: $blue;
+            }
+        }
+    }
+
+    h4 {
+        color: $light_blue;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    .links_group {
+        margin-bottom: 40px;
+        margin-top: 30px;
+
+        a:nth-of-type(1) {
+            margin-right: 10px;
+        }
+    }
+
+    .signature_item {
+        position: relative;
+        background: #fff;
+        box-shadow: 0 0 10px rgba($color: #1f1f1f, $alpha: 0.30);
+        border-radius: 20px;
+        margin-bottom: 40px;
+
+
+        .box {
+            padding: 25px 30px;
+
+            &.doc {
+                display: grid;
+                grid-template-columns: auto auto;
+                align-items: center;
+
+                a {
+                    color: $light_blue;
+                }
+
+                .action {
+                    justify-self: self-end;
+
+                    a {
+                        position: relative;
+                        margin: 0 8px;
+                        color: $light_blue;
+                        display: inline-block;
+                        z-index: 10;
+
+                        &:before {
+                            content: '';
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%) scale(0.8);
+                            width: 100%;
+                            height: 100%;
+                            z-index: -1;
+                            border-radius: 100%;
+                            width: 40px;
+                            height: 40px;
+                            transition: all 0.2s ease;
+                            background: rgba(0,0,0,0);
+                        }
+
+                        &:hover {
+                            color: $blue;
+
+                            &:before {
+                                background: rgba(0,0,0,0.1);
+                                transform: translate(-50%, -50%) scale(1);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        p {
+            margin: 0;
+            color: $grey;
+        }
+
+        ul {
+            li {
+                margin-bottom: 12px;
+                color: $grey;
+            }
+        }
+
+        .action_links {
+            margin-top: 30px;
+            text-align: center;
+
+            .link {
+                padding: 5px;
+                width: 40px;
+                height: 40px;
+                display: inline-block;
+                font-size: 20px;
+                margin: 0 5px;
+            }
+        }
+
+
+        .tag {
+            text-align: center;
+            padding: 10px 0;
+            color: #fff;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+
+            &.declined {
+                background-color: red;
+            }
+
+            &.success {
+                background-color: green;
+            }
+
+            &.pending {
+                background-color: orange;
+            }
+        }
+    }
+}
+
+.body_overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #000;
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+
+    &.active {
+        opacity: 0.8;
+        visibility: visible;
+    }
+}
+
+.edit_signer {
+    position: fixed;
+    top: 0;
+    right: -1000px;
+    width: 50%;
+    height: 100vh;
+    padding: 40px;
+    background: #fff;
+    box-shadow: -10px 0 20px rgba(0,0,0,0.2);
+    opacity: 0;
+    z-index: 100;
+    transition: all 0.2s ease;
+
+    &.open {
+        opacity: 1;
+        right: 0;
+    }
+
+    .close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+
+    h3 {
+        color: $light_blue;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    form {
+        input, select {
+            margin-bottom: 20px;
+        }
+
+        .link {
+            height: auto;
+        }
+    }
+}

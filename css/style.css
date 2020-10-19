@@ -11,6 +11,7 @@ body {
   display: inline-block;
   background: #0582BE;
   border-radius: 40px;
+  border: 1px solid #0582BE;
   padding: 10px 40px;
   color: #fff;
   text-transform: uppercase;
@@ -23,10 +24,11 @@ body {
   background: #0C1632;
   text-decoration: none;
   color: #fff;
+  border-color: #153667;
 }
 
 .link.secundary {
-  background: #fff;
+  background: transparent;
   border: 1px solid #0582BE;
   color: #0582BE;
 }
@@ -38,7 +40,16 @@ body {
 
 .link.small {
   font-size: 12px;
-  padding: 10px 20px;
+  padding: 7px 20px;
+}
+
+.link.red {
+  color: red;
+  border-color: red;
+}
+
+.link.red:hover {
+  background-color: red;
 }
 
 .app {
@@ -127,6 +138,19 @@ body {
   border-left: 1px solid #fff;
 }
 
+.app .main .top .logout button {
+  border: none;
+  background: none;
+  text-transform: uppercase;
+  color: #fff;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.app .main .top .logout button:hover {
+  color: #153667;
+}
+
 .app .main header {
   background: #153667;
   text-align: center;
@@ -138,6 +162,7 @@ body {
   margin: 0;
   color: #fff;
   text-transform: uppercase;
+  font-weight: bold;
 }
 
 .app .main header p {
@@ -151,13 +176,19 @@ body {
   padding-bottom: 100px;
 }
 
+.app .main .main_content header {
+  margin: 0;
+  padding: 0;
+  background: none;
+}
+
 .app .main footer {
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
   background: #0582BE;
-  z-index: 1000;
+  z-index: 100;
   padding: 10px 0;
 }
 
@@ -590,5 +621,312 @@ body {
 .signers_box .steps .buttons .left {
   -ms-grid-column-align: start;
       justify-self: start;
+}
+
+.signatures {
+  padding-top: 40px;
+}
+
+.signatures form {
+  margin-bottom: 30px;
+}
+
+.signatures form input.form-control {
+  border-right: none;
+}
+
+.signatures form .input-group-append .input-group-text {
+  background: none;
+  border-left: none;
+}
+
+.signatures table.table thead th {
+  border-top: none;
+  border-bottom-color: #0582BE;
+  color: #0582BE;
+  font-size: 18px;
+}
+
+.signatures table.table tbody td {
+  color: #616161;
+  border: none;
+}
+
+.signatures table.table tbody td .state {
+  position: relative;
+  width: 100%;
+  height: 8px;
+  background: darkgray;
+  display: block;
+}
+
+.signatures table.table tbody td .state:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  height: 100%;
+}
+
+.signatures table.table tbody td .state.started:after {
+  background-color: #545454;
+  width: 20%;
+}
+
+.signatures table.table tbody td .state.created:after {
+  background-color: #0582BE;
+  width: 20%;
+}
+
+.signatures table.table tbody td .state.declined:after {
+  background-color: red;
+  width: 100%;
+}
+
+.signatures table.table tbody td .state.processing:after {
+  background-color: orange;
+  width: 50%;
+}
+
+.signatures table.table tbody td .state.successful:after {
+  background-color: green;
+  width: 100%;
+}
+
+.signatures table.table tbody td.started {
+  color: #545454;
+}
+
+.signatures table.table tbody td.created {
+  color: #0582BE;
+}
+
+.signatures table.table tbody td.declined {
+  color: red;
+}
+
+.signatures table.table tbody td.processing {
+  color: orange;
+}
+
+.signatures table.table tbody td.successful {
+  color: green;
+}
+
+.signatures_detail header {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto;
+      grid-template-columns: auto auto;
+  border-bottom: 1px solid #0582BE;
+}
+
+.signatures_detail header h3 {
+  -ms-grid-column-align: start;
+      justify-self: start;
+  color: #0582BE;
+  font-weight: bold;
+}
+
+.signatures_detail header a {
+  -ms-grid-column-align: end;
+      justify-self: end;
+  color: #0582BE;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.signatures_detail header a i {
+  color: inherit;
+}
+
+.signatures_detail header a:hover {
+  color: #153667;
+}
+
+.signatures_detail h4 {
+  color: #0582BE;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.signatures_detail .links_group {
+  margin-bottom: 40px;
+  margin-top: 30px;
+}
+
+.signatures_detail .links_group a:nth-of-type(1) {
+  margin-right: 10px;
+}
+
+.signatures_detail .signature_item {
+  position: relative;
+  background: #fff;
+  -webkit-box-shadow: 0 0 10px rgba(31, 31, 31, 0.3);
+          box-shadow: 0 0 10px rgba(31, 31, 31, 0.3);
+  border-radius: 20px;
+  margin-bottom: 40px;
+}
+
+.signatures_detail .signature_item .box {
+  padding: 25px 30px;
+}
+
+.signatures_detail .signature_item .box.doc {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto;
+      grid-template-columns: auto auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.signatures_detail .signature_item .box.doc a {
+  color: #0582BE;
+}
+
+.signatures_detail .signature_item .box.doc .action {
+  -ms-grid-column-align: self-end;
+      justify-self: self-end;
+}
+
+.signatures_detail .signature_item .box.doc .action a {
+  position: relative;
+  margin: 0 8px;
+  color: #0582BE;
+  display: inline-block;
+  z-index: 10;
+}
+
+.signatures_detail .signature_item .box.doc .action a:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) scale(0.8);
+          transform: translate(-50%, -50%) scale(0.8);
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  background: rgba(0, 0, 0, 0);
+}
+
+.signatures_detail .signature_item .box.doc .action a:hover {
+  color: #153667;
+}
+
+.signatures_detail .signature_item .box.doc .action a:hover:before {
+  background: rgba(0, 0, 0, 0.1);
+  -webkit-transform: translate(-50%, -50%) scale(1);
+          transform: translate(-50%, -50%) scale(1);
+}
+
+.signatures_detail .signature_item p {
+  margin: 0;
+  color: #575757;
+}
+
+.signatures_detail .signature_item ul li {
+  margin-bottom: 12px;
+  color: #575757;
+}
+
+.signatures_detail .signature_item .action_links {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.signatures_detail .signature_item .action_links .link {
+  padding: 5px;
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  font-size: 20px;
+  margin: 0 5px;
+}
+
+.signatures_detail .signature_item .tag {
+  text-align: center;
+  padding: 10px 0;
+  color: #fff;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.signatures_detail .signature_item .tag.declined {
+  background-color: red;
+}
+
+.signatures_detail .signature_item .tag.success {
+  background-color: green;
+}
+
+.signatures_detail .signature_item .tag.pending {
+  background-color: orange;
+}
+
+.body_overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #000;
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.body_overlay.active {
+  opacity: 0.8;
+  visibility: visible;
+}
+
+.edit_signer {
+  position: fixed;
+  top: 0;
+  right: -1000px;
+  width: 50%;
+  height: 100vh;
+  padding: 40px;
+  background: #fff;
+  -webkit-box-shadow: -10px 0 20px rgba(0, 0, 0, 0.2);
+          box-shadow: -10px 0 20px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  z-index: 100;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.edit_signer.open {
+  opacity: 1;
+  right: 0;
+}
+
+.edit_signer .close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.edit_signer h3 {
+  color: #0582BE;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.edit_signer form input, .edit_signer form select {
+  margin-bottom: 20px;
+}
+
+.edit_signer form .link {
+  height: auto;
 }
 /*# sourceMappingURL=style.css.map */
