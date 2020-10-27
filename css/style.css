@@ -5,6 +5,76 @@ body {
   font-family: "Open Sans", sans-serif;
 }
 
+@-webkit-keyframes toast {
+  0% {
+    top: 60%;
+  }
+  100% {
+    top: 50%;
+  }
+}
+
+@keyframes toast {
+  0% {
+    top: 60%;
+  }
+  100% {
+    top: 50%;
+  }
+}
+
+@-webkit-keyframes toast_hide {
+  from {
+    top: 50%;
+    opacity: 1;
+  }
+  to {
+    top: 40%;
+    opacity: 0;
+  }
+}
+
+@keyframes toast_hide {
+  from {
+    top: 50%;
+    opacity: 1;
+  }
+  to {
+    top: 40%;
+    opacity: 0;
+  }
+}
+
+.toast {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1000;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-size: 20px;
+  padding: 20px;
+}
+
+.toast.active {
+  -webkit-animation-name: toast;
+          animation-name: toast;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+}
+
+.toast.hide_toast {
+  -webkit-animation-name: toast_hide;
+          animation-name: toast_hide;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+}
+
 .link {
   position: relative;
   margin: auto;
@@ -50,6 +120,24 @@ body {
 
 .link.red:hover {
   background-color: red;
+}
+
+.modal .modal-body {
+  padding: 30px 20px;
+}
+
+.modal .modal_img {
+  position: absolute;
+  left: 50%;
+  top: -150px;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.modal p {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #0582BE;
 }
 
 .app {
@@ -136,6 +224,10 @@ body {
 .app .main .top .logout {
   padding-left: 20px;
   border-left: 1px solid #fff;
+}
+
+.app .main .top .logout form {
+  display: inline;
 }
 
 .app .main .top .logout button {
@@ -889,11 +981,11 @@ body {
   visibility: visible;
 }
 
-.edit_signer {
+.panel {
   position: fixed;
   top: 0;
-  right: -1000px;
-  width: 50%;
+  right: -1500px;
+  width: 70%;
   height: 100vh;
   padding: 40px;
   background: #fff;
@@ -905,12 +997,12 @@ body {
   transition: all 0.2s ease;
 }
 
-.edit_signer.open {
+.panel.open {
   opacity: 1;
   right: 0;
 }
 
-.edit_signer .close {
+.panel .close {
   position: absolute;
   top: 20px;
   right: 20px;
@@ -928,5 +1020,60 @@ body {
 
 .edit_signer form .link {
   height: auto;
+}
+
+.wallet .box {
+  width: 400px;
+  position: relative;
+  margin: auto;
+  margin-top: 50px;
+  border-radius: 20px;
+  -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.wallet .box h2 {
+  background: #E36924;
+  color: #fff;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  padding: 14px 0;
+  text-transform: uppercase;
+  font-weight: normal;
+  font-size: 20px;
+}
+
+.wallet .box form {
+  padding: 30px 40px;
+  color: #575757;
+}
+
+.wallet .box form label {
+  margin-bottom: 15px;
+}
+
+.wallet .box form .input-group-prepend {
+  display: inline;
+}
+
+.wallet .box form .input-group-prepend .input-group-text {
+  background: none;
+  border: none;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.wallet .box form input {
+  margin-bottom: 20px;
+}
+
+.wallet .box form button {
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.wallet .box form button i {
+  margin-left: 10px;
 }
 /*# sourceMappingURL=style.css.map */

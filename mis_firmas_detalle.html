@@ -54,7 +54,9 @@
                 </div>
 
                 <div class="logout">
-                    <button type="submit">Salir <i class="fas fa-sign-out-alt"></i></button>
+                    <form action="">
+                        <button type="submit">Salir <i class="fas fa-sign-out-alt"></i></button>
+                    </form>
                 </div>
             </div>
 
@@ -62,9 +64,70 @@
                 <header>
                     <h1>Mis Firmas</h1>
                 </header>
-
+                
                 <div class="body_overlay"></div>
-                <div class="edit_signer">
+
+                <!-- Toast: resend -->
+                <div role="alert" aria-live="assertive" aria-atomic="true" class="toast resend" data-autohide="true">
+                    <div class="toast-body">
+                      Solicitud reenviada
+                    </div>
+                </div>
+
+                <!-- Toast: delete -->
+                <div role="alert" aria-live="assertive" aria-atomic="true" class="toast delete" data-autohide="true">
+                    <div class="toast-body">
+                      Firmante removido
+                    </div>
+                </div>
+
+                <!-- Modal: delete signer -->
+                <div id="delete_modal" class="modal fade" tabindex="-1" role="dialog">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                      <div class="modal-content">
+                        <div class="modal-body">
+                            <img src="images/wait.svg" height="180" alt="" class="modal_img">
+                          <p class="text-center">¿Estas seguro que quieres eliminar el firmante de este documento?</p>
+                            <div class="text-center">
+                                <a href="" class="link small delete_trigger">Quitar firmante</a>
+                                <a href="" class="link secundary small" data-dismiss="modal" aria-label="Close">Cancelar</a>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                <!-- Modal: resend -->
+                <div id="resend_modal" class="modal fade" tabindex="-1" role="dialog">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                      <div class="modal-content">
+                        <div class="modal-body">
+                            <img src="images/postman.svg" height="180" alt="" class="modal_img">
+                          <p class="text-center">¿Reenviar solicitud de firma?</p>
+                            <div class="text-center">
+                                <a href="" class="link small resend_trigger">Reenviar</a>
+                                <a href="" class="link secundary small" data-dismiss="modal" aria-label="Close">Cancelar</a>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                <!-- Panel: PDF viewer  -->
+                <div class="pdf_panel panel">
+                    <div class="close">
+                        <a href="">
+                            <i class="fas fa-times"></i>
+                        </a>
+                    </div>
+
+                    <object data="pdf/contrato.pdf" type="application/pdf" width="100%" height="90%">
+                        <p>Revisa tu documento en el siguiente <a href="pdf/contrato.pdf" target="_blank">enlace</a></p>
+                    </object>
+                </div>
+
+                <!-- Panel: edit signer -->
+                <div class="edit_signer panel">
                     <div class="close">
                         <a href="">
                             <i class="fas fa-times"></i>
@@ -73,9 +136,35 @@
 
                     <h3>Editar Firmante</h3>
 
+                        <div role="alert" aria-live="assertive" aria-atomic="true" class="toast save" data-autohide="true">
+                            <div class="toast-body">
+                              Firmante Guardado
+                            </div>
+                        </div>
+
                         <form action="">
-                            <label for="">Nombre</label>
-                            <input type="text" class="form-control" value="Pedro Alberto Pérez González">
+                            <div class="form-row">
+                                <div class="col-sm-6">
+                                    <label for="">Primer Nombre</label>
+                                    <input type="text" class="form-control" value="Pedro">
+                                </div>
+                                <div class="col-sm-6">
+                                    <label for="">Segundo Nombre</label>
+                                    <input type="text" class="form-control" value="Alberto">
+                                </div>
+                            </div>
+                        <form action="">
+                            <div class="form-row">
+                                <div class="col-sm-6">
+                                    <label for="">Primer Apellido</label>
+                                    <input type="text" class="form-control" value="Pérez">
+                                </div>
+                                <div class="col-sm-6">
+                                    <label for="">Segundo Apellido</label>
+                                    <input type="text" class="form-control" value="González">
+                                </div>
+                            </div>
+                            
 
                             <label for="">Documento</label>
                             <input type="text" class="form-control" value="123456789">
@@ -92,7 +181,7 @@
                                 <option value="">OTP</option>
                             </select>
 
-                            <button type="submit" class="form-control link">Guardar Firmante</button>
+                            <button type="submit" class="form-control link save_signer">Guardar Firmante</button>
                         </form>
                 </div>
 
@@ -122,10 +211,10 @@
                                 <div class="signature_item">
                                     <div class="box doc">
                                         <span class="doc_name">
-                                            <a href="">Contrato-de-arrendamiento.pdf</a>
+                                            <a class="pdfTrigger" href="pdf_panel">Contrato-de-arrendamiento.pdf</a>
                                         </span>
                                         <span class="action">
-                                            <a href="" class="action_links"><i class="fas fa-search"></i></a>
+                                            <a href="pdf_panel" class="action_links pdfTrigger"><i class="fas fa-search"></i></a>
                                             <a href="" class="action_links"><i class="far fa-edit"></i></a>
                                         </span>
                                     </div>
@@ -148,13 +237,13 @@
                                         </ul>
 
                                         <div class="action_links">
-                                            <a href="" class="link secundary red small">
+                                            <a href="" class="link secundary red small" data-toggle="modal" data-target="#delete_modal">
                                                 <i class="far fa-trash-alt"></i>
                                             </a>
                                             <a href="" class="link secundary small edit">
                                                 <i class="far fa-edit"></i>
                                             </a>
-                                            <a href="" class="link secundary small">
+                                            <a href="" class="link secundary small" data-toggle="modal" data-target="#resend_modal">
                                                 <i class="far fa-share-square"></i>
                                             </a>
                                         </div>
@@ -174,7 +263,7 @@
                                             <li>Fecha de Firma: 2020-08-20</li>
                                         </ul>
                                         <div class="action_links">
-                                            <a href="" class="link secundary red small">
+                                            <a href="" class="link secundary red small" data-toggle="modal" data-target="#delete_modal">
                                                 <i class="far fa-trash-alt"></i>
                                             </a>
                                             <a href="" class="link secundary small edit">
@@ -197,13 +286,13 @@
                                             <li>Fecha de Firma: Pendiente</li>
                                         </ul>
                                         <div class="action_links">
-                                            <a href="" class="link secundary red small">
+                                            <a href="" class="link secundary red small" data-toggle="modal" data-target="#delete_modal">
                                                 <i class="far fa-trash-alt"></i>
                                             </a>
                                             <a href="" class="link secundary small edit">
                                                 <i class="far fa-edit"></i>
                                             </a>
-                                            <a href="" class="link secundary small">
+                                            <a href="" class="link secundary small" data-toggle="modal" data-target="#resend_modal">
                                                 <i class="far fa-share-square"></i>
                                             </a>
                                         </div>
@@ -223,11 +312,13 @@
                 </footer>
             </div>
         </div>
+        
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js" integrity="sha512-T/tUfKSV1bihCnd+MxKD0Hm1uBBroVYBOYSk1knyvQ9VyZJpc/ALb4P0r6ubwVPSGB2GvjeoMAJJImBG12TiaQ==" crossorigin="anonymous"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/js/umd/util.js" integrity="sha512-LsEwFGlbBmTbjVTzd3kwfwZhaAXHxbiJ8k2Q8IrEgPxAUaAtZ2L8ro1JF4PNqaXGenGZKgaKjk+iW/Mdecl4ig==" crossorigin="anonymous"></script> -->
 
     <!-- Datepickker setup -->
     <script>
@@ -239,22 +330,27 @@
 
     <!-- Signer edit panel -->
     <script>
-        const closeTrigger = document.querySelector('.close a');
+        const closeTrigger = document.querySelectorAll('.close a');
         let editTriggers = document.querySelectorAll('.edit');
         editTriggers = Array.from(editTriggers);
         const overlay = document.querySelector('.body_overlay');
         const editSigner = document.querySelector('.edit_signer');
+        let panel = document.querySelector('.panel.open');
         const editSignerOpen = document.querySelector('.edit_signer.open');
 
-        closeTrigger.addEventListener('click', (e) => {
-            e.preventDefault();
-            editSigner.classList.remove('open');
-            overlay.classList.remove('active');
+        const pdfTriggers = document.querySelectorAll('.pdfTrigger');
+
+        Array.from(closeTrigger).map( close => {
+            close.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.target.closest('.panel').classList.remove('open');
+                overlay.classList.remove('active');
+            });
         });
 
         overlay.addEventListener('click', (e) => {
             e.preventDefault();
-            editSigner.classList.remove('open');
+            panel.classList.remove('open');
             overlay.classList.remove('active');
         });
 
@@ -263,10 +359,106 @@
                     e.preventDefault();
                     editSigner.classList.add('open');
                     overlay.classList.add('active');
+                    return panel = document.querySelector('.panel.open');
             });
         });
 
-            
+        Array.from(pdfTriggers).map(pdfTrigger => {
+            pdfTrigger.addEventListener('click', (e) => {
+                e.preventDefault();
+                const pdfPanelClass = e.target.closest('a').getAttribute("href");
+                const pdfPanel = document.querySelector('.' + pdfPanelClass);
+                pdfPanel.classList.add('open');
+                overlay.classList.add('active');
+                return panel = document.querySelector('.panel.open');
+            });
+        })
+        
+    </script>
+
+    <script>
+        const saveButton = document.querySelector('.save_signer');
+        const toast = document.querySelector('.toast.save');
+
+        saveButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            toast.classList.add('active');
+            $('.toast.save.active').toast({animation: true, delay: 1000});
+            $('.toast.save.active').toast('show');
+        });
+
+        $('.toast').on('shown.bs.toast', function(){
+            setTimeout(() => {
+                toast.classList.add('hide_toast');
+            }, 800);
+        });
+
+        $('.toast').on('hidden.bs.toast', function(){
+            toast.classList.remove('active');
+            toast.classList.remove('hide_toast');
+        });
+    </script>
+
+    <script>
+        const resendTriggers = document.querySelectorAll('.resend_trigger');
+        
+        Array.from(resendTriggers).map(resendTrigger => {
+            resendTrigger.addEventListener('click', (e) => {
+                e.preventDefault();
+                $('#resend_modal').modal('hide');
+
+                const toastTarget = document.querySelector('.toast.resend');
+                toastTarget.classList.add('active');
+
+                setTimeout(() => {
+                    $('.toast.resend.active').toast({animation: true, delay: 1000});
+                    $('.toast.resend.active').toast('show');
+                }, 300);
+                
+                $('.toast').on('shown.bs.toast', function(){
+                    setTimeout(() => {
+                        toastTarget.classList.add('hide_toast');
+                    }, 800);
+                });
+
+                $('.toast').on('hidden.bs.toast', function(){
+                    toastTarget.classList.remove('active');
+                    toastTarget.classList.remove('hide_toast');
+                });
+            });
+        });
+        
+    </script>
+
+    <script>
+        const deleteSigners = document.querySelectorAll('.delete_trigger');
+        
+        Array.from(deleteSigners).map(deleteSigner => {
+            deleteSigner.addEventListener('click', (e) => {
+                e.preventDefault();
+                $('#delete_modal').modal('hide');
+
+                const toastTarget = document.querySelector('.toast.delete');
+                toastTarget.classList.add('active');
+
+                setTimeout(() => {
+                    $('.toast.delete.active').toast({animation: true, delay: 1000});
+                    $('.toast.delete.active').toast('show');
+                }, 300);
+
+                $('.toast').on('shown.bs.toast', function(){
+                    setTimeout(() => {
+                        toastTarget.classList.add('hide_toast');
+                    }, 800);
+                });
+
+                $('.toast').on('hidden.bs.toast', function(){
+                    toastTarget.classList.remove('active');
+                    toastTarget.classList.remove('hide_toast');
+                });
+            });
+        });
+        
     </script>
 
 </body>
