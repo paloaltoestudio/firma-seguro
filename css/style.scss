@@ -64,6 +64,7 @@ body {
 
 .link {
     position: relative;
+    height: auto;
     margin: auto;
     display: inline-block;
     background: $light_blue;
@@ -134,6 +135,34 @@ body {
     display: grid;
     grid-template-columns: 290px auto;
     min-height: 100vh;
+
+    &.front_app {
+        grid-template-columns: initial;
+
+        .sidebar {
+            position: absolute;
+            height: auto;
+            grid-column: initial;
+            background: none;
+        }
+
+        .main {
+            grid-column: initial;
+            background: $blue;
+        }
+
+        .main_content {
+            h1 {
+                text-align: center;
+                font-weight: bold;
+                font-size: 28px;
+                color: #fff;
+                text-transform: uppercase;
+                margin-top: 50px;
+                margin-bottom: 40px;
+            }
+        }
+    }
 
     .sidebar {
         position: fixed;
@@ -227,6 +256,18 @@ body {
             }
         }
 
+        .sub_top {
+            padding: 20px 0;
+            padding-left: 320px;
+            background: rgba($light_blue, 0.5);
+
+            p {
+                color: #fff;
+                margin-bottom: 0;
+                font-size: 25px;
+            }
+        }
+
         header {
             background: $blue;
             text-align: center;
@@ -253,6 +294,7 @@ body {
 
             header {
                 margin: 0;
+                margin-bottom: 30px;
                 padding: 0;
                 background: none;
             }
@@ -984,7 +1026,12 @@ body {
         }
 
         .link {
+            position: relative;
+            margin: auto;
+            margin-top: 40px;
+            display: block;
             height: auto;
+            width: 300px;
         }
     }
 }
@@ -1046,3 +1093,219 @@ body {
         }
     }
 }
+
+
+// Front Signature Flow
+
+.box_front {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    margin: auto;
+    padding: 40px 30px;
+    background: #fff;
+    border-radius: 10px;
+    border-top: 5px solid $orange;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+
+    h2 {
+        color: $light_blue;
+        text-transform: uppercase;
+        text-align: center;
+        font-weight: bold;
+        font-size: 28px;
+        margin-bottom: 5px;
+        margin-top: 20px;
+    }
+
+    p {
+        text-align: center;
+        font-size: 20px;
+        color: $grey;
+        margin-bottom: 30px;
+    }
+
+    input.form-control {
+        margin-bottom: 20px;
+        height: 50px;
+        border-radius: 0;
+        border: 0;
+        border-left: 4px solid $blue;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        transition: all 0.2s ease;
+
+        &:focus {
+            border-color: $orange;
+            border-left-width: 8px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+        }
+    }
+
+    button {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .g-recaptcha {
+        div {
+            position: relative;
+            margin: auto;
+        }
+    }
+
+    .error {
+        color: red;
+        margin-top: 10px;
+        display: none;
+
+        &.active {
+            display: block;
+        }
+    }
+
+    .policy {
+        color: $blue;
+        text-align: center;
+        display: block;
+        margin-bottom: 20px;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+}
+
+// Review Document
+
+.box_front.review_doc {
+    max-width: 800px;
+
+    ul {
+        margin-top: 20px;
+        li {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid $light_blue;
+
+            &:last-child {
+                border: none;
+            }
+
+            .action_links {
+                a {
+                    margin-left: 10px;
+                }
+            }
+            
+            .doc_name {
+                color: $light_blue;
+            }
+        }
+    }
+}
+
+// OTP
+
+.otp {
+    text-align: center;
+
+    input {
+        display: inline;
+        width: 50px;
+        height: 80px;
+        border: none;
+        border-bottom: 3px solid $light_blue;
+        margin: 0 10px;
+        text-align: center;
+        color: $light_blue;
+        font-size: 35px;
+        font-weight: bold;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    .link_group {
+        margin-top: 40px;
+
+        a {
+            margin: 0 5px;
+        }
+    }
+
+    .otp_error {
+        color: red;
+        margin-top: 10px;
+        display: none;
+
+        &.active {
+            display: block;
+        }
+    }
+}
+
+// Review and sign
+
+.review {
+    .box_front {
+        max-width: 600px;
+    }
+    .doc {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 40px;
+        padding: 10px 0;
+        border-top: 1px solid $light_blue;
+        border-bottom: 1px solid $light_blue;
+
+        a {
+            margin: initial;
+            color: $light_blue;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    }
+
+    .signers {
+        h3 {
+            color: $grey;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            thead {
+                border-bottom: 1px solid $grey;
+            }
+
+            tbody {
+                padding-top: 20px;
+            }
+
+            th, td {
+                padding: 8px 0;
+                color: $grey;
+            }
+
+            td {
+                font-size: 14px;
+            }
+        }
+    }
+    .action {
+        text-align: center;
+        margin-top: 40px;
+        padding-top: 20px;
+        border-top: 1px solid $light_blue;
+    }
+}
+

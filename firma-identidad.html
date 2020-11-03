@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Firma Seguro</title>
+    <link rel="shortcut icon" href="">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.standalone.min.css" integrity="sha512-TQQ3J4WkE/rwojNFo6OJdyu6G8Xe9z8rMrlF9y7xpFbQfW5g8aSWcygCQ4vqRiJqFsDsE1T6MoAOMJkFXlrI9A==" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="css/style.css">    
+
+    <!--[if IE]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    
+    <div class="app front_app">
+        <div class="sidebar front">
+            <div class="logo">
+                <img src="images/logo.jpg" alt="">
+            </div>
+        </div>
+
+        <div class="main">
+            <div class="top">
+                <div class="user">
+                    <a href="">
+                        Iniciar Sesión
+                    </a>
+                </div>
+
+                <div class="logout">
+                    <a href="">
+                        Registrarse
+                    </a>
+                </div>
+            </div>
+
+            <div class="content">
+                <div class="main_content">
+                    <h1>Identifícate</h1>
+                    <section class="document">
+                        <div class="box_front">
+                            <h2>Documento de Identidad</h2>
+                            <p>Ingresa tu número de identificación</p>
+
+                            <form action="">
+                                <input type="text" class="form-control" placeholder="Número de documento" required />
+                                <div class="g-recaptcha" data-sitekey="6Lc03d0ZAAAAACXep8EkAgghFdtJ6Lp992ZqTb-1"></div>
+                                <p class="error">Verifica que no eres un robot</p>
+                                <button class="link form-control">Siguiente</button>
+                            </form>
+
+                            <a href="" class="policy">Ver política de proteccion de datos</a>
+                        </div>
+                    </section>
+                </div>
+
+                <footer>
+                    <p class="text-center">
+                        Copyright Treda Solutions
+                    </p>
+                </footer>
+            </div>
+        </div>
+        
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js" integrity="sha512-T/tUfKSV1bihCnd+MxKD0Hm1uBBroVYBOYSk1knyvQ9VyZJpc/ALb4P0r6ubwVPSGB2GvjeoMAJJImBG12TiaQ==" crossorigin="anonymous"></script>
+    <script src="https://www.google.com/recaptcha/api.js"
+        async defer></script>
+
+    <!-- Recaptcha front error msg -->
+    <script>
+        const url_string = window.location.href;
+        const url = new URL(url_string);
+        const recaptchaRes = url.searchParams.get("g-recaptcha-response");
+
+        const errorMsg = document.querySelector('.error');
+
+        if(recaptchaRes == ''){
+            errorMsg.classList.add('active');
+        } else if(recaptchaRes && errorMsg.classList.contains('active')){
+            errorMsg.classList.remove('active');
+        } 
+    </script>
+
+    
+</body>
+</html>

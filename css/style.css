@@ -77,6 +77,7 @@ body {
 
 .link {
   position: relative;
+  height: auto;
   margin: auto;
   display: inline-block;
   background: #0582BE;
@@ -146,6 +147,33 @@ body {
   -ms-grid-columns: 290px auto;
       grid-template-columns: 290px auto;
   min-height: 100vh;
+}
+
+.app.front_app {
+  -ms-grid-columns: initial;
+      grid-template-columns: initial;
+}
+
+.app.front_app .sidebar {
+  position: absolute;
+  height: auto;
+  grid-column: initial;
+  background: none;
+}
+
+.app.front_app .main {
+  grid-column: initial;
+  background: #153667;
+}
+
+.app.front_app .main_content h1 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 28px;
+  color: #fff;
+  text-transform: uppercase;
+  margin-top: 50px;
+  margin-bottom: 40px;
 }
 
 .app .sidebar {
@@ -243,6 +271,18 @@ body {
   color: #153667;
 }
 
+.app .main .sub_top {
+  padding: 20px 0;
+  padding-left: 320px;
+  background: rgba(5, 130, 190, 0.5);
+}
+
+.app .main .sub_top p {
+  color: #fff;
+  margin-bottom: 0;
+  font-size: 25px;
+}
+
 .app .main header {
   background: #153667;
   text-align: center;
@@ -270,6 +310,7 @@ body {
 
 .app .main .main_content header {
   margin: 0;
+  margin-bottom: 30px;
   padding: 0;
   background: none;
 }
@@ -1019,7 +1060,12 @@ body {
 }
 
 .edit_signer form .link {
+  position: relative;
+  margin: auto;
+  margin-top: 40px;
+  display: block;
   height: auto;
+  width: 300px;
 }
 
 .wallet .box {
@@ -1075,5 +1121,226 @@ body {
 
 .wallet .box form button i {
   margin-left: 10px;
+}
+
+.box_front {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  margin: auto;
+  padding: 40px 30px;
+  background: #fff;
+  border-radius: 10px;
+  border-top: 5px solid #E36924;
+  -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.box_front h2 {
+  color: #0582BE;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: bold;
+  font-size: 28px;
+  margin-bottom: 5px;
+  margin-top: 20px;
+}
+
+.box_front p {
+  text-align: center;
+  font-size: 20px;
+  color: #575757;
+  margin-bottom: 30px;
+}
+
+.box_front input.form-control {
+  margin-bottom: 20px;
+  height: 50px;
+  border-radius: 0;
+  border: 0;
+  border-left: 4px solid #153667;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.box_front input.form-control:focus {
+  border-color: #E36924;
+  border-left-width: 8px;
+  -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.box_front button {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.box_front .g-recaptcha div {
+  position: relative;
+  margin: auto;
+}
+
+.box_front .error {
+  color: red;
+  margin-top: 10px;
+  display: none;
+}
+
+.box_front .error.active {
+  display: block;
+}
+
+.box_front .policy {
+  color: #153667;
+  text-align: center;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.box_front .policy:hover {
+  text-decoration: underline;
+}
+
+.box_front.review_doc {
+  max-width: 800px;
+}
+
+.box_front.review_doc ul {
+  margin-top: 20px;
+}
+
+.box_front.review_doc ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #0582BE;
+}
+
+.box_front.review_doc ul li:last-child {
+  border: none;
+}
+
+.box_front.review_doc ul li .action_links a {
+  margin-left: 10px;
+}
+
+.box_front.review_doc ul li .doc_name {
+  color: #0582BE;
+}
+
+.otp {
+  text-align: center;
+}
+
+.otp input {
+  display: inline;
+  width: 50px;
+  height: 80px;
+  border: none;
+  border-bottom: 3px solid #0582BE;
+  margin: 0 10px;
+  text-align: center;
+  color: #0582BE;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.otp input:focus {
+  outline: none;
+}
+
+.otp .link_group {
+  margin-top: 40px;
+}
+
+.otp .link_group a {
+  margin: 0 5px;
+}
+
+.otp .otp_error {
+  color: red;
+  margin-top: 10px;
+  display: none;
+}
+
+.otp .otp_error.active {
+  display: block;
+}
+
+.review .box_front {
+  max-width: 600px;
+}
+
+.review .doc {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 40px;
+  padding: 10px 0;
+  border-top: 1px solid #0582BE;
+  border-bottom: 1px solid #0582BE;
+}
+
+.review .doc a {
+  margin: initial;
+  color: #0582BE;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.review .signers h3 {
+  color: #575757;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.review .signers table {
+  width: 100%;
+}
+
+.review .signers table thead {
+  border-bottom: 1px solid #575757;
+}
+
+.review .signers table tbody {
+  padding-top: 20px;
+}
+
+.review .signers table th, .review .signers table td {
+  padding: 8px 0;
+  color: #575757;
+}
+
+.review .signers table td {
+  font-size: 14px;
+}
+
+.review .action {
+  text-align: center;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #0582BE;
 }
 /*# sourceMappingURL=style.css.map */
