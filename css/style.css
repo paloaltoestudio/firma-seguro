@@ -176,6 +176,80 @@ body {
   margin-bottom: 40px;
 }
 
+.app.front_app .main_content table.table thead th {
+  border-top: none;
+  border-bottom-color: #0582BE;
+  color: #0582BE;
+  font-size: 18px;
+}
+
+.app.front_app .main_content table.table tbody td {
+  color: #616161;
+  border: none;
+}
+
+.app.front_app .main_content table.table tbody td .state {
+  position: relative;
+  width: 100%;
+  height: 8px;
+  background: darkgray;
+  display: block;
+}
+
+.app.front_app .main_content table.table tbody td .state:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  height: 100%;
+}
+
+.app.front_app .main_content table.table tbody td .state.started:after {
+  background-color: #545454;
+  width: 20%;
+}
+
+.app.front_app .main_content table.table tbody td .state.created:after {
+  background-color: #0582BE;
+  width: 20%;
+}
+
+.app.front_app .main_content table.table tbody td .state.declined:after {
+  background-color: red;
+  width: 100%;
+}
+
+.app.front_app .main_content table.table tbody td .state.processing:after {
+  background-color: orange;
+  width: 50%;
+}
+
+.app.front_app .main_content table.table tbody td .state.successful:after {
+  background-color: green;
+  width: 100%;
+}
+
+.app.front_app .main_content table.table tbody td.started {
+  color: #545454;
+}
+
+.app.front_app .main_content table.table tbody td.created {
+  color: #0582BE;
+}
+
+.app.front_app .main_content table.table tbody td.declined {
+  color: red;
+}
+
+.app.front_app .main_content table.table tbody td.processing {
+  color: orange;
+}
+
+.app.front_app .main_content table.table tbody td.successful {
+  color: green;
+}
+
 .app .sidebar {
   position: fixed;
   height: 100vh;
@@ -243,6 +317,12 @@ body {
 
 .app .main .top .user a {
   font-weight: bold;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.app .main .top .user a:hover {
+  color: #153667;
 }
 
 .app .main .top .credit {
@@ -297,10 +377,21 @@ body {
   font-weight: bold;
 }
 
+.app .main header h1 span {
+  display: block;
+  font-weight: lighter;
+  font-size: 80%;
+  margin-bottom: 10px;
+}
+
 .app .main header p {
   color: #fff;
   font-size: 26px;
   font-weight: lighter;
+}
+
+.app .main header.main_route {
+  padding-bottom: 150px;
 }
 
 .app .main .main_content {
@@ -447,6 +538,75 @@ body {
   display: block;
 }
 
+.route {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  top: -100px;
+}
+
+.route .item {
+  text-align: center;
+  padding: 0 50px;
+}
+
+.route .item a {
+  text-decoration: none;
+}
+
+.route .item .img {
+  display: block;
+  margin: auto;
+  width: 250px;
+  height: 250px;
+  background: #0582BE;
+  border-radius: 100%;
+  margin-bottom: 20px;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.route .item .img img {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.route .item .img:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+.route .item .img:hover img {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+
+.route .item h3 {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 30px;
+  color: #0582BE;
+}
+
+.route .item p {
+  color: #0582BE;
+  font-size: 20px;
+}
+
 #drop-area {
   border: 2px dashed #ccc;
   border-radius: 20px;
@@ -512,6 +672,38 @@ body {
 
 #fileElem {
   display: none;
+}
+
+.doc_confirm {
+  padding-top: 50px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.doc_confirm h3 {
+  color: #E36924;
+  text-transform: uppercase;
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.doc_confirm .doc_name {
+  font-size: 24px;
+  color: #575757;
+  text-transform: uppercase;
+  display: block;
+  text-decoration: none;
+  margin-bottom: 20px;
+}
+
+.doc_confirm .doc_name i {
+  color: #E36924;
+  margin-left: 10px;
+}
+
+.doc_confirm a.small i {
+  margin-left: 5px;
 }
 
 .signers_home {
@@ -773,80 +965,6 @@ body {
   border-left: none;
 }
 
-.signatures table.table thead th {
-  border-top: none;
-  border-bottom-color: #0582BE;
-  color: #0582BE;
-  font-size: 18px;
-}
-
-.signatures table.table tbody td {
-  color: #616161;
-  border: none;
-}
-
-.signatures table.table tbody td .state {
-  position: relative;
-  width: 100%;
-  height: 8px;
-  background: darkgray;
-  display: block;
-}
-
-.signatures table.table tbody td .state:after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: block;
-  height: 100%;
-}
-
-.signatures table.table tbody td .state.started:after {
-  background-color: #545454;
-  width: 20%;
-}
-
-.signatures table.table tbody td .state.created:after {
-  background-color: #0582BE;
-  width: 20%;
-}
-
-.signatures table.table tbody td .state.declined:after {
-  background-color: red;
-  width: 100%;
-}
-
-.signatures table.table tbody td .state.processing:after {
-  background-color: orange;
-  width: 50%;
-}
-
-.signatures table.table tbody td .state.successful:after {
-  background-color: green;
-  width: 100%;
-}
-
-.signatures table.table tbody td.started {
-  color: #545454;
-}
-
-.signatures table.table tbody td.created {
-  color: #0582BE;
-}
-
-.signatures table.table tbody td.declined {
-  color: red;
-}
-
-.signatures table.table tbody td.processing {
-  color: orange;
-}
-
-.signatures table.table tbody td.successful {
-  color: green;
-}
-
 .signatures_detail header {
   display: -ms-grid;
   display: grid;
@@ -891,6 +1009,10 @@ body {
 
 .signatures_detail .links_group a:nth-of-type(1) {
   margin-right: 10px;
+}
+
+.signatures_detail .add_signer {
+  margin-bottom: 40px;
 }
 
 .signatures_detail .signature_item {
@@ -1049,17 +1171,17 @@ body {
   right: 20px;
 }
 
-.edit_signer h3 {
+.edit_signer h3, .add_signer_panel h3 {
   color: #0582BE;
   font-weight: bold;
   margin-bottom: 20px;
 }
 
-.edit_signer form input, .edit_signer form select {
+.edit_signer form input, .edit_signer form select, .add_signer_panel form input, .add_signer_panel form select {
   margin-bottom: 20px;
 }
 
-.edit_signer form .link {
+.edit_signer form .link, .add_signer_panel form .link {
   position: relative;
   margin: auto;
   margin-top: 40px;
@@ -1342,5 +1464,94 @@ body {
   margin-top: 40px;
   padding-top: 20px;
   border-top: 1px solid #0582BE;
+}
+
+.billing {
+  padding-top: 50px;
+}
+
+.billing .filter {
+  margin-bottom: 40px;
+}
+
+.billing .back_link {
+  margin-bottom: 20px;
+  display: inline-block;
+  color: #0582BE;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.billing .back_link i {
+  font-size: 90%;
+}
+
+.billing .back_link:hover {
+  color: #153667;
+}
+
+.billing .billing_table tr:last-child {
+  background: none;
+}
+
+.billing .doc_list {
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.billing .doc_list h4 {
+  color: #0582BE;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  border-bottom: 1px solid #0582BE;
+}
+
+.billing .doc_list ul li {
+  margin-bottom: 8px;
+}
+
+.billing .doc_list ul li a {
+  color: #575757;
+}
+
+.billing .doc_list ul li a i {
+  font-size: 80%;
+  margin-left: 10px;
+}
+
+.billing h3 {
+  margin-bottom: 20px;
+  color: #0582BE;
+  font-weight: bold;
+}
+
+.add_contact {
+  margin-bottom: 20px;
+}
+
+.error_msg {
+  text-align: center;
+}
+
+.error_msg h2 {
+  color: #fff;
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.error_msg p {
+  color: #fff;
+  font-size: 20px;
+}
+
+.error_msg img {
+  width: 100%;
+  max-width: 500px;
+  margin-bottom: 40px;
 }
 /*# sourceMappingURL=style.css.map */

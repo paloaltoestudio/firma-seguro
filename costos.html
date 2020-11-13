@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Firma Seguro</title>
+    <link rel="shortcut icon" href="">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.standalone.min.css" integrity="sha512-TQQ3J4WkE/rwojNFo6OJdyu6G8Xe9z8rMrlF9y7xpFbQfW5g8aSWcygCQ4vqRiJqFsDsE1T6MoAOMJkFXlrI9A==" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="css/style.css">    
+
+    <!--[if IE]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    
+    <div class="app">
+        <div class="sidebar">
+            <div class="logo">
+                <img src="images/logo.jpg" alt="">
+            </div>
+            <nav class="main_nav">
+                <ul class="list-unstyled">
+                    <li><a href=""><img src="images/home.png" alt="">Inicio</a></li>
+                    <li><a class="active" href=""><img src="images/signatures.png" alt="">Mis Firmas</a></li>
+                    <li><a href=""><img src="images/contacts.png" alt="">Contactos</a></li>
+                    <li><a href=""><img src="images/billing.png" alt="">Facturación</a></li>
+                    <li><a class="" href=""><img src="images/upload_doc.png" alt="">Cargar Documentos</a></li>
+                    <li><a href=""><img src="images/documents.png" alt="">Documentos Estándar</a></li>
+                    <li><a href=""><img src="images/wallet.png" alt="">Recargra Saldo</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="main">
+            <div class="top">
+                <div class="user">
+                    <a href="">
+                        <i class="fas fa-user"></i>
+                        Juan
+                        <i class="fas fa-chevron-circle-down"></i>
+                    </a>
+                </div>
+
+                <div class="credit">
+                    Saldo $15.000
+                </div>
+
+                <div class="logout">
+                    <button type="submit">Salir <i class="fas fa-sign-out-alt"></i></button>
+                </div>
+            </div>
+
+            <div class="content">
+                <header>
+                    <h1>Mis Costos</h1>
+                </header>
+
+                <div class="main_content">
+                    <div class="billing">
+
+                        <div class="filter">
+                            <form action="">
+                                <div class="form-row">
+                                    <div class="col-sm-3">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="ID Firma" name="search_doc" required>
+                                            <div class="input-group-append">
+                                                <span class="input-group-text" id="inputGroupPrepend3">
+                                                    <i class="fas fa-search"></i>
+                                                </span>
+                                              </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="Email" name="search_user" required>
+                                            <div class="input-group-append">
+                                                <span class="input-group-text" id="inputGroupPrepend3">
+                                                    <i class="fas fa-search"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-sm-3">
+                                        <div class="input-group">
+                                            <div class="input-group">
+                                                <input class="datepicker form-control" data-date-format="mm/dd/yyyy" placeholder="mm/dd/aaaa">
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text" id="inputGroupPrepend3">
+                                                        <i class="far fa-calendar-alt"></i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                        <table class="table table-striped">
+                            <thead>
+                               <tr>
+                                   <th>ID de Firma</th>
+                                   <th>Fecha</th>
+                                   <th>Nombre</th>
+                                   <th>Cantidad</th>
+                                   <th>Valor</th>
+                                   <th>Acciones</th>
+                               </tr>
+                            </thead>      
+                            <tbody>
+                                <tr>
+                                    <td>923456789</td>
+                                    <td>2020-08-10</td>
+                                    <td>Firma de contrato de alquiler</td>
+                                    <td>3</td>
+                                    <td>$25.000</td>
+                                    <td>
+                                        <a href="" class="link secundary small">Detalle <i class="fas fa-search"></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>923456788</td>
+                                    <td>2020-08-10</td>
+                                    <td>Firma de contrato de trabajo</td>
+                                    <td>2</td>
+                                    <td>$15.000</td>
+                                    <td>
+                                        <a href="" class="link secundary small">Detalle <i class="fas fa-search"></i></a>
+                                    </td>
+                                </tr>
+                            </tbody> 
+                        </table>
+                    </div>
+                </div>
+
+                <footer>
+                    <p class="text-center">
+                        Copyright Treda Solutions
+                    </p>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js" integrity="sha512-T/tUfKSV1bihCnd+MxKD0Hm1uBBroVYBOYSk1knyvQ9VyZJpc/ALb4P0r6ubwVPSGB2GvjeoMAJJImBG12TiaQ==" crossorigin="anonymous"></script>
+
+    <script>
+        $('.datepicker').datepicker({
+            format: 'mm/dd/yyyy',
+            startDate: '-3d'
+        });
+    </script>
+
+</body>
+</html>

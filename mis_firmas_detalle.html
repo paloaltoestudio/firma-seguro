@@ -126,6 +126,75 @@
                     </object>
                 </div>
 
+                <!-- Panel: add signer -->
+                <div class="add_signer_panel panel">
+                    <div class="close">
+                        <a href="">
+                            <i class="fas fa-times"></i>
+                        </a>
+                    </div>
+
+                    <h3>Agregar Firmante</h3>
+
+                        <div role="alert" aria-live="assertive" aria-atomic="true" class="toast save" data-autohide="true">
+                            <div class="toast-body">
+                              Firmante Guardado
+                            </div>
+                        </div>
+
+                        <form action="">
+
+                            <div class="form-row">
+                                <div class="col-sm-6">
+                                    <label for="">Documento</label>
+                                    <input type="text" class="form-control" value="">
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="col-sm-6">
+                                    <label for="">Primer Nombre</label>
+                                    <input type="text" class="form-control" value="">
+                                </div>
+                                <div class="col-sm-6">
+                                    <label for="">Segundo Nombre</label>
+                                    <input type="text" class="form-control" value="">
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="col-sm-6">
+                                    <label for="">Primer Apellido</label>
+                                    <input type="text" class="form-control" value="">
+                                </div>
+                                <div class="col-sm-6">
+                                    <label for="">Segundo Apellido</label>
+                                    <input type="text" class="form-control" value="">
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="col-sm-4">
+                                    <label for="">Email</label>
+                                    <input type="email" class="form-control" value="">
+                                </div>
+                                <div class="col-sm-4">
+                                    <label for="">Celular</label>
+                                    <input type="text" class="form-control" value="">
+                                </div>
+                                <div class="col-sm-4">
+                                    <label for="">Método de Validación</label>
+                                    <select class="form-control" name="">
+                                        <option value="">Preguntas de validación</option>
+                                        <option value="">OTP</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="form-control link save_signer">Guardar Firmante</button>
+                        </form>
+                </div>
+
                 <!-- Panel: edit signer -->
                 <div class="edit_signer panel">
                     <div class="close">
@@ -227,6 +296,8 @@
                             </div>
                             <div class="col-sm-12">
                                 <h4>Firmantes</h4>
+
+                                <a href="add_signer_panel" class="link small edit add_signer">Agregar Firmante <i class="fas fa-user-plus"></i></a>
                             </div>
 
                             <div class="col-sm-4">
@@ -245,7 +316,7 @@
                                             <a href="" class="link secundary red small" data-toggle="modal" data-target="#delete_modal">
                                                 <i class="far fa-trash-alt"></i>
                                             </a>
-                                            <a href="" class="link secundary small edit">
+                                            <a href="edit_signer" class="link secundary small edit">
                                                 <i class="far fa-edit"></i>
                                             </a>
                                             <a href="" class="link secundary small" data-toggle="modal" data-target="#resend_modal">
@@ -271,7 +342,7 @@
                                             <a href="" class="link secundary red small" data-toggle="modal" data-target="#delete_modal">
                                                 <i class="far fa-trash-alt"></i>
                                             </a>
-                                            <a href="" class="link secundary small edit">
+                                            <a href="edit_signer" class="link secundary small edit">
                                                 <i class="far fa-edit"></i>
                                             </a>
                                         </div>
@@ -294,7 +365,7 @@
                                             <a href="" class="link secundary red small" data-toggle="modal" data-target="#delete_modal">
                                                 <i class="far fa-trash-alt"></i>
                                             </a>
-                                            <a href="" class="link secundary small edit">
+                                            <a href="edit_signer" class="link secundary small edit">
                                                 <i class="far fa-edit"></i>
                                             </a>
                                             <a href="" class="link secundary small" data-toggle="modal" data-target="#resend_modal">
@@ -305,6 +376,11 @@
                                     <div class="tag pending">Sin Firmar</div>
                                 </div>
                             </div>
+
+                            <div class="dol-sm-12 text-left">
+                                <a href="add_signer_panel" class="link small edit add_signer">Agregar Firmante <i class="fas fa-user-plus"></i></a>
+                            </div>
+
 
                         </div>
                     </div>
@@ -333,7 +409,7 @@
         });
     </script>
 
-    <!-- Signer edit panel -->
+    <!-- Signer add/edit panel -->
     <script>
         const closeTrigger = document.querySelectorAll('.close a');
         let editTriggers = document.querySelectorAll('.edit');
@@ -362,7 +438,19 @@
         editTriggers.map(editTrigger => {
             editTrigger.addEventListener('click', (e) => {
                     e.preventDefault();
-                    editSigner.classList.add('open');
+
+                    let targetPanelName = e.target.getAttribute('href');
+                    let targetPanel = document.querySelector('.' + targetPanelName);
+                    console.log(e.target.getAttribute('href'))
+
+                    if(!targetPanelName){
+                        console.log(e.target.parentElement.getAttribute('href'));
+                        targetPanelName = e.target.parentElement.getAttribute('href');
+                        targetPanel = document.querySelector('.' + targetPanelName);
+                    } 
+                    
+                    
+                    targetPanel.classList.add('open');
                     overlay.classList.add('active');
                     return panel = document.querySelector('.panel.open');
             });
