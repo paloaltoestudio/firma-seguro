@@ -1,0 +1,748 @@
+//Fonts
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+$main_font:'Montserrat', sans-serif;
+$body_font:'Open Sans', sans-serif;
+
+//Colors
+$dark_blue: #0C1632;
+$light_blue: #0582BE;
+$blue:  #153667;
+$orange: #E36924;
+$grey: #575757;
+$grey_light: #F8F8F8; 
+
+//General
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    height: 100%;
+    background: #fff;
+}
+
+a, button {
+    transition: all 0.2s ease-in-out;
+}
+
+.top_line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 3px;
+    border-top: 2px solid $orange;
+}
+
+.logo {
+    margin-top: -10px;
+}
+
+
+// Login
+
+.login {
+    width: 100%;
+    height: 100vh;
+    background: url('../images/login_bg.png') no-repeat;
+    background-size: cover;
+    display: inline-block;
+
+    .login_form_wrapper {
+        position: relative;
+        width: 90%;
+        max-width: 500px;
+        margin: auto;
+        margin-top: 20px;
+
+        h1 {
+            color: #fff;
+            text-transform: uppercase;
+            text-align: center;
+            margin-bottom: 40px;
+
+            strong {
+                color: $orange;
+                display: block;
+            }
+        }
+
+        .form {
+            background: $grey_light;
+            padding: 30px 40px;
+            border-radius: 8px;
+
+            h2 {
+                font-size: 20px;
+                font-weight: bold;
+                border-bottom: 1px solid $light_blue;
+                padding-bottom: 10px;
+                margin-bottom: 20px;
+                text-align: center;
+            }
+
+            label {
+                color: $blue;
+                font-weight: bold;
+
+                i {
+                    margin-right: 5px;
+                }
+            }
+
+            input.form-control {
+                border-color: $light_blue;
+                margin-bottom: 30px;
+                transition: all 0.2s ease-in-out;
+
+                &:focus {
+                    box-shadow: none;
+                    border-color: $blue;
+                    border-width: 2px;
+                }
+            }
+
+            button {
+                background: $light_blue;
+                border: none;
+                color: #fff;
+                text-transform: uppercase;
+                text-align: center;
+                cursor: pointer;
+                margin-top: 30px;
+                margin-bottom: 40px;
+                transition: all 0.2s ease-in-out;
+
+                &:hover {
+                    background: $orange;
+                    color: $blue;
+                }
+            }
+        }
+    }
+}
+
+
+// Admin
+// General admin
+
+.admin_wrapper {
+    display: grid;
+    grid-template-columns: 50px auto;
+    grid-template-rows: 125px auto;
+    min-height: 100vh;
+    background: #F8F8F8;
+
+    &.active {
+        grid-template-columns: 291px auto;
+    }
+}
+
+.admin_top {
+    background: $light_blue;
+    grid-column: 1/-1;
+    grid-row: 1/2;
+    display: grid;
+    grid-template-columns: 330px auto auto;
+
+    h1 {
+        color: #fff;
+        font-size: 30px;
+        font-weight: lighter;
+        justify-self: start;
+        align-self: center;
+        margin-left: 50px;
+    }
+
+    .admin_right {
+        justify-self: right;
+        display: grid;
+        grid-template-columns: auto auto;
+        
+
+        .admin_right_info {
+            display: grid;
+            align-content: center;
+            padding-right: 20px;
+
+            a {
+                color: #fff;
+                display: block;
+                margin: 5px 0;
+                font-weight: lighter;
+                text-align: right;
+
+                img {
+                    margin-right: 5px;
+                }
+            }
+        }
+    }
+}
+
+.sidebar {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    background: $blue;
+    padding-top: 50px;
+    
+    .navbar {
+        padding: 0;
+        z-index: 100;
+        
+        ul {
+            width: 100%;
+        }
+
+        .toggle_expand.active_toggle {
+            text-align: right;
+        }
+
+        
+        .dropdown-toggle {
+            &::after {
+                display: none;
+            }
+            
+            &.show {
+                &::after {
+                    display: block;
+                }
+            }
+        }
+        
+        .navbar-collapse > ul > li {
+            a {
+                position: relative;
+                padding: 10px 0;
+                padding-left: 20px;
+            }
+        }
+    }
+
+    
+
+    a[aria-expanded='true']{
+        background: $light_blue;
+    }
+
+    .dropdown-toggle::after {
+        display: block;
+        position: absolute;
+        top: 50%;
+        right: 20px;
+        transform: translateY(-50%);
+    }
+    
+    li {
+        ul {
+            background: #1B8DC0;
+
+            li{
+
+                &:first-of-type {
+                    padding-top: 10px;
+                }
+                &:last-of-type {
+                    padding-bottom: 10px;
+                }
+
+                a {
+                    padding: 10px 0;
+                    padding-left: 50px;
+
+                    
+                }
+            }
+        }
+    }
+
+    a {
+        color: #fff;
+        font-weight: lighter;
+        font-size: 16px;
+        display: block;
+        text-decoration: none;
+
+        &:hover, &.active {
+            background: $light_blue;
+        }
+
+        i {
+            color: #fff;
+            margin-right: 10px;
+        }
+    }
+}
+
+.modal {
+    .link {
+        padding: 10px 15px;
+    }
+}
+
+
+.modal_delete {
+    text-align: center;
+    padding: 20px 20px;
+
+    p {
+        margin-bottom: 30px;
+        font-weight: bold;
+        font-size: 18px;
+    }
+
+    a {
+        margin: 0 10px;
+    }
+}
+
+.modal_observation {
+    padding: 20px;
+    font-weight: lighter;
+    text-align: justify;
+}
+
+.close_modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: $blue;
+}
+
+.modal_table {
+    .table {
+        box-shadow: none;
+    }
+    .modal-dialog {
+        max-width: 100%;
+        width: 80%;
+        
+        .close_modal {
+            color: #fff;
+            top: 20px;
+            right: 20px;
+        }
+        
+        .modal-content {
+            background: none;
+            border: none;
+        }
+    }
+}
+
+.pagination {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 40px;
+    
+    ul {
+        position: relative;
+        margin: auto;
+        
+        li {
+            a {
+                color: $blue;
+                text-decoration: none;
+                padding: 5px;
+                text-align: center;
+                width: 30px;
+                height: 30px;
+                display: block;
+                line-height: 18px;
+                z-index: 12;
+                border-radius: 100%;
+                
+                &:hover, &.active {
+                    background: $blue;
+                    color: #fff;
+                }
+            }
+        }
+    }
+}
+
+.send_signature {
+    &.disabled {
+        color: #CECECE !important;
+        cursor: not-allowed;
+    }
+}
+
+.link {
+    padding: 4px 14px;
+    text-align: center;
+    height: auto;
+    background: $light_blue;
+    border: 1px solid $light_blue;
+    color: #fff;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover {
+        background: none;
+        color: $light_blue;
+        text-decoration: none;
+    }
+
+    &.delete {
+        background: #C21313;
+        border-color: #C21313;
+
+        &:hover {
+            background: none;
+            color: #C21313;
+        }
+    }
+}
+
+.table {
+        position: relative;
+        border: none;
+        margin-bottom: 50px;
+        box-shadow: 0 0 20px rgba($color: #858585, $alpha: 0.2);
+        
+        thead.thead-dark {
+            border: none;
+
+            th {
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+                border: none;
+                background: $blue;
+
+                h4 {
+                    font-size: 18px;
+                    margin: 8px 0;
+                }
+            }
+        }
+
+        .thead-light {
+            th {
+                border-right: 1px solid #fff;
+                color: $blue;
+                vertical-align: middle;
+
+                font-size: 12px;
+
+                &:last-of-type {
+                    border: none;
+                }
+            }
+        }
+
+        tbody {
+
+            tr {
+                background: #fff;
+                font-size: 12px;
+
+                td {
+                    vertical-align: middle;
+                    a {
+                        color: $blue;
+                    }
+                }
+            }
+
+            tr:last-child td:first-child { 
+                border-bottom-left-radius: 10px; 
+            }
+            tr:last-child td:last-child { 
+                border-bottom-right-radius: 10px; 
+            }
+        }
+    }
+
+    .case_link {
+        display: block;
+        white-space: nowrap;
+
+        i {
+            font-size: 14px;
+        }
+    }
+    
+    .actions {
+        text-align: center;
+
+        a {
+            margin: 0 5px;
+            i {
+                font-size: 16px;
+            }
+        }
+
+        .more_icon {
+            color: $blue;
+        }
+    
+        .delete_icon {
+            color: #EE0000;
+        }
+    }
+    .tag {
+        background: #ccc;
+        padding: 4px 10px;
+        text-align: center;
+        border-radius: 20px;
+        color: #fff;
+
+        &.success {
+            background: #60A803;
+        }
+        &.process {
+            background: #E3810E;
+        }
+        &.fail {
+            background: #C21313;
+        }
+    }
+
+.content {
+    position: relative;
+    width: 95%;
+    margin: 0 auto;
+    padding-bottom: 50px;
+    padding-top: 50px;
+    grid-column: 2/3;
+    grid-row: 2/3;
+
+    h2 {
+        font-size: 30px;
+        font-weight: lighter;
+        border-bottom: 1px solid $light_blue;
+        padding-bottom: 10px;
+        margin-bottom: 30px;
+        i {
+            font-size: 28px;
+        }
+    }
+
+    .filters {
+        h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+
+            i {
+                font-size: 14px;
+                margin-right: 5px;
+            }
+        }
+    }
+
+    form {
+        margin-bottom: 40px;
+
+        label {
+            font-size: 14px;
+        }
+        
+        input.form-control, select {
+            font-size: 12px;
+        }
+        
+        .custom-file-label {
+            font-size: 12px;
+        }
+
+        .form-control.datapicker {
+            background: #fff;
+            padding: 10px;
+            border: 1px solid #ced4da;
+        }
+
+        .gj-datepicker {
+            i {
+                top: 6px;
+                right: 4px;
+            }
+        }
+    }
+}
+
+// Crear caso
+
+.create_case {
+    padding: 40px;
+    background: #fff;
+    border-radius: 10px;
+    
+    h4 {
+        font-size: 16px;
+        font-weight: bold;
+        color: $blue;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #ccc;
+    }
+    
+    .row {
+        margin-bottom: 15px;
+    }
+    
+    .group-field {
+        margin-bottom: 30px;
+    }
+    
+    .signer_detail_info {
+        opacity: 0;
+        visibility: hidden;
+        height: 0;
+        transition: all 0.2s ease;
+        
+        &.active {
+            visibility: visible;
+            opacity: 1;
+            height: auto;
+        }
+    }
+    
+    .centrales_info {
+        position: relative;
+        background: $light_blue;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+        border-radius: 10px;
+        display: none;
+        
+        a {
+            position: absolute;
+            top: 5px;
+            right: 10px;
+            color: #fff;
+            
+            &:hover {
+                color: $blue;
+            }
+        }
+        
+        p {
+            font-size: 14px;
+            margin-bottom: 5px;
+            
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+    }
+    
+    .add_signer_bottom {
+        display: grid;
+        grid-template-columns: auto 200px;
+    }
+    
+    .table {
+        select {
+            font-size: 12px;
+        }
+        
+        td {
+            a {
+                text-decoration: underline;
+                display: block;
+                text-align: center;
+                
+                i {
+                    margin-left: 10px;
+                }
+            }
+        }
+    }
+    
+    .create_case_bottom_links {
+        display: grid;
+        grid-template-columns: auto auto;
+        justify-content: end;
+        column-gap: 10px;
+    }
+}
+
+// Ajustes
+
+.settings {
+    
+    h3 {
+        color: $blue;
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 40px;
+    }
+    
+    .form-group {
+        margin-bottom: 30px;
+        
+        h4 {
+            font-size: 18px;
+            color: $blue;
+            margin-bottom: 10px;
+        }
+        
+        .link {
+            padding: 6px 12px;
+        }
+        
+        .small {
+            width: 50px;
+        }
+    }
+    
+    form {
+        h5 {
+            font-size: 18px;
+            color: $blue;
+            margin-bottom: 20px;
+        }
+        
+        input, select {
+            height: 40px;
+        }
+    }
+    
+    table {
+        a {
+            text-decoration: underline;
+            
+            &.delete {
+                text-decoration: none;
+                color: red;
+                font-size: 16px;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
