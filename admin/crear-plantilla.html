@@ -91,8 +91,8 @@
             <div class="consultar_caso">
                 <div class="container-fluid">
 
-                    <!-- Toast: delete -->
-                    <div role="alert" aria-live="assertive" aria-atomic="true" class="toast delete" data-autohide="true">
+                    <!-- Toast: template -->
+                    <div role="alert" aria-live="assertive" aria-atomic="true" class="toast create_toast" data-autohide="true">
                         <div class="toast-body">
                           Plantilla Creada
                         </div>
@@ -124,7 +124,7 @@
                         <div class="row">
                             <div class="col-sm-10 text-right">
                                 <hr>
-                                <button class="link py-2 px-5">Crear Plantilla</button>
+                                <button class="link py-2 px-5 create_template_btn">Crear Plantilla</button>
                             </div>  
                         </div>
                         
@@ -148,6 +148,7 @@
 
     <script src="https://cdn.tiny.cloud/1/zuf8j62la2kvwbtjdkd4qok6vdsgp8ime015jorcg8dbg2yw/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 
+    <!-- Tiny MCE Editor  -->
     <script>
       tinymce.init({
         skin: 'bootstrap',
@@ -165,21 +166,22 @@
     </script>
 
 
-    <!-- Delete modal -->
+    <!-- Create template toast -->
     <script>
-        const deleteSigners = document.querySelectorAll('.delete_trigger');
+        const createToastTrigger = document.querySelector('.create_template_btn');
+        
 
-        Array.from(deleteSigners).map(deleteSigner => {
-            deleteSigner.addEventListener('click', (e) => {
+            createToastTrigger.addEventListener('click', (e) => {
                 e.preventDefault();
-                $('#delete_modal').modal('hide');
 
-                const toastTarget = document.querySelector('.toast.delete');
+                console.log('hola')
+
+                const toastTarget = document.querySelector('.toast.create_toast');
                 toastTarget.classList.add('active');
 
                 setTimeout(() => {
-                    $('.toast.delete.active').toast({animation: true, delay: 1000});
-                    $('.toast.delete.active').toast('show');
+                    $('.toast.create_toast.active').toast({animation: true, delay: 1000});
+                    $('.toast.create_toast.active').toast('show');
                 }, 300);
 
                 $('.toast').on('shown.bs.toast', function(){
@@ -193,9 +195,10 @@
                     toastTarget.classList.remove('hide_toast');
                 });
             });
-        });
 
     </script>
+
+    
 </body>
 
 </html>
