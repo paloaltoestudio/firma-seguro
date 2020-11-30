@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Firma Seguro | Firma Electrónica</title>
+    <link rel="shortcut icon" href="">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+        integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+
+
+    <link rel="stylesheet" href="css/style_admin.css">
+    <link rel="stylesheet" href="css/responsive_admin.css">
+
+    <!--[if IE]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+    <div class="top_line"></div>
+
+    <div class="admin_wrapper">
+        <div class="admin_top">
+            <div class="logo">
+                <img src="images/firma-seguro-logo.jpg" alt="">
+            </div>
+
+            <h1>Portal de firma electrónica</h1>
+
+            <div class="admin_right">
+                <div class="admin_right_info">
+                    <a href="">Cerrar Sesión</a>
+                    <a href=""><img src="images/user_icon.svg" alt="">ARODRIGUEZ</a>
+                </div>
+                <img src="images/admin_top_img.png" alt="">
+            </div>
+        </div>
+
+        <div class="sidebar">
+           <nav class="navbar navbar-expand-lg">
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-ellipsis-v"></i>
+              </button>
+                       
+           <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="list-unstyled admin_nav">
+                <li><a class="toggle_expand" href=""><i class="fas fa-caret-left fa-caret-right"></i></a></li>
+                <li>
+                    <a href="#casos_submenu" data-toggle="collapse" aria-expanded="false"
+                        class="dropdown-toggle" data-toggle="tooltip" data-placement="right" title="Consultas"><i class="fas fa-search"></i> <span class="d-none">Consultas</span></a>
+                    <ul class="collapse list-unstyled" id="casos_submenu">
+                        <li>
+                            <a href="pagos.html" data-toggle="tooltip" data-placement="right" title="Pagos"><i class="fas fa-dollar-sign"></i> <span class="d-none">Pagos</span></a>
+                        </li>
+                        <li>
+                            <a href="logs.html" data-toggle="tooltip" data-placement="right" title="Logs"><i class="fas fa-clipboard-list"></i> <span class="d-none">Logs</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li><a class="" href="facturacion.html" data-toggle="tooltip" data-placement="right" title="Facturación"><i class="fas fa-file-invoice-dollar"></i> <span class="d-none">Facturación</span></a></li>
+                
+                <li>
+                    <a href="#templates_submenu" data-toggle="collapse" aria-expanded="true"
+                        class="dropdown-toggle" data-toggle="tooltip" data-placement="right" title="Plantillas"><i class="fas fa-columns"></i> <span class="d-none">Plantillas</span></a>
+                    <ul class="collapse show list-unstyled" id="templates_submenu">
+                        <li>
+                            <a class="active" href="consultar-plantillas.html" data-toggle="tooltip" data-placement="right" title="Consultar Plantilla"><i class="fas fa-search"></i> <span class="d-none">Consultar Plantilla</span></a>
+                        </li>
+                        <li>
+                            <a class="" href="crear-plantilla.html" data-toggle="tooltip" data-placement="right" title="Crear Plantilla"><i class="fas fa-plus"></i> <span class="d-none">Crear Plantilla</span></a>
+                        </li>
+                    </ul>
+                </li>
+                
+                <li><a href="" data-toggle="tooltip" data-placement="right" title="Cerrar Sesión"><i class="fas fa-sign-out-alt"></i> <span class="d-none">Cerrar Sesión</span></a></li>
+            </ul>
+               </div>
+            </nav>
+        </div>
+
+        <div class="content">
+            <div class="consultar_caso">
+                <div class="container-fluid">
+
+                    <!-- Modal: delete signer -->
+                    <div id="delete_modal" class="modal fade" tabindex="-1" role="dialog">
+                      <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                          <div class="modal-body">
+                              <img src="images/wait.svg" height="180" alt="" class="modal_img">
+                            <p class="text-center">¿Estas seguro que quieres eliminar esta plantilla?</p>
+                              <div class="text-center">
+                                  <a href="" class="link small delete_trigger">Eliminar plantilla</a>
+                                  <a href="" class="link secundary small" data-dismiss="modal" aria-label="Close">Cancelar</a>
+                              </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Toast: delete -->
+                    <div role="alert" aria-live="assertive" aria-atomic="true" class="toast delete" data-autohide="true">
+                        <div class="toast-body">
+                          Plantilla Eliminada
+                        </div>
+                    </div>
+
+                    <h2><i class="fas fa-search"></i> Consultar Plantillas</h2>
+
+                    <div class="filters">
+                        <h3><i class="fas fa-filter"></i> Filtros</h3>
+
+                        <form action="">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <label for="">Nombre</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="table-responsive-xl">
+                        <table class="table templates_table">
+                            <thead class="thead-dark">
+                              <tr>
+                                <th colspan="2" scope="col">
+                                    <h4>Plantillas</h4>
+                                </th>
+                              </tr>
+                            </thead>
+                            <thead class="thead-light">
+                                <tr>
+                                  <th scope="col">Nombre</th>
+                                  <th scope="col">Acciones</th>
+                                </tr>
+                              </thead>
+                            <tbody>
+                              <tr>
+                                <td>Nombre de la plantilla número 1</td>
+                                <td>
+                                    <span class="action_links">
+                                        <a class="link small" href="" data-placement="top" title="Editar"><i class="fas fa-edit"></i></a>
+                                        <a href="" class="link smal secundary" data-placement="top" title="Preview"><i class="fas fa-search"></i></a>
+                                        <a href="" class="link smal delete" data-toggle="modal" data-target="#delete_modal" data-placement="top" title="Editar"><i class="far fa-trash-alt"></i></a>
+                                    </span>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>Nombre de la plantilla número 2</td>
+                                <td>
+                                    <span class="action_links">
+                                        <a class="link small" href="" data-placement="top" title="Editar"><i class="fas fa-edit"></i></a>
+                                        <a href="" class="link smal secundary" data-placement="top" title="Preview"><i class="fas fa-search"></i></a>
+                                        <a href="" class="link smal delete" data-toggle="modal" data-target="#delete_modal" data-placement="top" title="Editar"><i class="far fa-trash-alt"></i></a>
+                                    </span>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>Nombre de la plantilla número 3</td>
+                                <td>
+                                    <span class="action_links">
+                                        <a class="link small" href="" data-placement="top" title="Editar"><i class="fas fa-edit"></i></a>
+                                        <a href="" class="link smal secundary" data-placement="top" title="Preview"><i class="fas fa-search"></i></a>
+                                        <a href="" class="link smal delete" data-toggle="modal" data-target="#delete_modal" data-placement="top" title="Editar"><i class="far fa-trash-alt"></i></a>
+                                    </span>
+                                </td>
+                              </tr>
+                              
+                              
+                            </tbody>
+                          </table>
+                    </div>
+                    
+                    <div class="pagination">
+                        <ul class="list-unstyled list-inline">
+                            <li class="list-inline-item"><a class="active" href="">1</a></li>
+                            <li class="list-inline-item"><a href="">2</a></li>
+                            <li class="list-inline-item"><a href="">3</a></li>
+                            <li class="list-inline-item"><a href="">4</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+    <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.js" type="text/javascript"></script>
+
+    <script src="js/scripts_admin.js"></script>
+    <script src="js/nav.js"></script>
+
+    <!-- Tooltip -->
+    <script>
+        $('.admin_nav a').tooltip();
+        $('a').tooltip();
+    </script>
+
+
+    <!-- Delete modal -->
+    <script>
+        const deleteSigners = document.querySelectorAll('.delete_trigger');
+
+        Array.from(deleteSigners).map(deleteSigner => {
+            deleteSigner.addEventListener('click', (e) => {
+                e.preventDefault();
+                $('#delete_modal').modal('hide');
+
+                const toastTarget = document.querySelector('.toast.delete');
+                toastTarget.classList.add('active');
+
+                setTimeout(() => {
+                    $('.toast.delete.active').toast({animation: true, delay: 1000});
+                    $('.toast.delete.active').toast('show');
+                }, 300);
+
+                $('.toast').on('shown.bs.toast', function(){
+                    setTimeout(() => {
+                        toastTarget.classList.add('hide_toast');
+                    }, 800);
+                });
+
+                $('.toast').on('hidden.bs.toast', function(){
+                    toastTarget.classList.remove('active');
+                    toastTarget.classList.remove('hide_toast');
+                });
+            });
+        });
+
+    </script>
+</body>
+
+</html>

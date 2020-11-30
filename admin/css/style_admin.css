@@ -25,6 +25,76 @@ a, button {
   margin-top: -10px;
 }
 
+@-webkit-keyframes toast {
+  0% {
+    top: 60%;
+  }
+  100% {
+    top: 50%;
+  }
+}
+
+@keyframes toast {
+  0% {
+    top: 60%;
+  }
+  100% {
+    top: 50%;
+  }
+}
+
+@-webkit-keyframes toast_hide {
+  from {
+    top: 50%;
+    opacity: 1;
+  }
+  to {
+    top: 40%;
+    opacity: 0;
+  }
+}
+
+@keyframes toast_hide {
+  from {
+    top: 50%;
+    opacity: 1;
+  }
+  to {
+    top: 40%;
+    opacity: 0;
+  }
+}
+
+.toast {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1000;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-size: 20px;
+  padding: 20px;
+}
+
+.toast.active {
+  -webkit-animation-name: toast;
+          animation-name: toast;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+}
+
+.toast.hide_toast {
+  -webkit-animation-name: toast_hide;
+          animation-name: toast_hide;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+}
+
 .login {
   width: 100%;
   height: 100vh;
@@ -263,8 +333,20 @@ a, button {
   margin-right: 10px;
 }
 
+.modal .modal-body {
+  padding: 30px 20px;
+}
+
 .modal .link {
   padding: 10px 15px;
+}
+
+.modal .modal_img {
+  position: absolute;
+  left: 50%;
+  top: -150px;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
 
 .modal_delete {
@@ -350,6 +432,10 @@ a, button {
   cursor: not-allowed;
 }
 
+.action_links a {
+  margin: 0 5px;
+}
+
 .link {
   padding: 4px 14px;
   text-align: center;
@@ -357,7 +443,7 @@ a, button {
   background: #0582BE;
   border: 1px solid #0582BE;
   color: #fff;
-  border-radius: 10px;
+  border-radius: 20px;
   text-decoration: none;
   font-size: 14px;
   cursor: pointer;
@@ -366,8 +452,9 @@ a, button {
 }
 
 .link:hover {
-  background: none;
-  color: #0582BE;
+  background: #153667;
+  color: #fff;
+  border-color: #153667;
   text-decoration: none;
 }
 
@@ -377,8 +464,19 @@ a, button {
 }
 
 .link.delete:hover {
+  background: #9d0f0f;
+  color: #fff;
+}
+
+.link.secundary {
   background: none;
-  color: #C21313;
+  border: 1px solid #0582BE;
+  color: #0582BE;
+}
+
+.link.secundary:hover {
+  background: #0582BE;
+  color: #fff;
 }
 
 .table {
@@ -387,6 +485,13 @@ a, button {
   margin-bottom: 50px;
   -webkit-box-shadow: 0 0 20px rgba(133, 133, 133, 0.2);
           box-shadow: 0 0 20px rgba(133, 133, 133, 0.2);
+}
+
+.table.templates_table {
+  max-width: 800px;
+  position: relative;
+  margin: auto;
+  margin-bottom: 40px;
 }
 
 .table thead.thead-dark {
@@ -423,10 +528,6 @@ a, button {
 
 .table tbody tr td {
   vertical-align: middle;
-}
-
-.table tbody tr td a {
-  color: #153667;
 }
 
 .table tbody tr:last-child td:first-child {
@@ -512,6 +613,11 @@ a, button {
   font-size: 28px;
 }
 
+.content .filters {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+}
+
 .content .filters h3 {
   font-size: 18px;
   margin-bottom: 20px;
@@ -523,7 +629,7 @@ a, button {
 }
 
 .content form {
-  margin-bottom: 40px;
+  margin-bottom: 0px;
 }
 
 .content form label {
