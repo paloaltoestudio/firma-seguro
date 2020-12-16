@@ -1,0 +1,89 @@
+@media all and (max-width: 1400px) {
+  .auth {
+    -ms-grid-columns: auto 450px;
+        grid-template-columns: auto 450px;
+  }
+  .auth .hero h1 {
+    font-size: 45px;
+  }
+  .auth .hero img.main_img {
+    max-width: 400px;
+  }
+}
+
+@media all and (max-width: 1300px) {
+  .app .main .main_content {
+    padding: 20px 40px;
+  }
+}
+
+@media all and (max-width: 1024px) {
+  .app .main .main_content {
+    padding: 20px;
+  }
+}
+
+@media all and (max-width: 768px) {
+  .auth {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    height: auto;
+    background: linear-gradient(158deg, #59b6b1 23%, #2487e3 79%);
+    padding-top: 40px;
+  }
+  .auth:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../images/login_bg.png) no-repeat;
+    background-size: cover;
+    z-index: -1;
+  }
+  .auth .hero header {
+    margin: 40px 0;
+  }
+  .auth .hero h1 {
+    text-align: center;
+  }
+  .auth .hero h2 {
+    text-align: center;
+  }
+  .auth .hero {
+    background: none;
+  }
+  .auth .hero:after {
+    background: none;
+  }
+  .auth .main_panel {
+    padding-bottom: 40px;
+    max-width: 400px;
+    margin: auto;
+  }
+  .auth .main_panel .login_logo {
+    max-width: 300px;
+    margin: auto;
+    display: block;
+    margin-bottom: 40px;
+  }
+  .auth .hero img.main_img {
+    max-width: 400px;
+    width: 100%;
+  }
+  .auth .hero img.bottom {
+    position: relative;
+    bottom: auto;
+    right: auto;
+    left: -20px;
+    margin: 40px auto;
+    display: block;
+  }
+}
+/*# sourceMappingURL=responsive.css.map */
