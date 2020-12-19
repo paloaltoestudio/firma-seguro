@@ -206,68 +206,6 @@ button:focus {
   border: none;
 }
 
-.app.front_app .main_content table.table tbody td .state {
-  position: relative;
-  width: 100%;
-  height: 8px;
-  background: darkgray;
-  display: block;
-}
-
-.app.front_app .main_content table.table tbody td .state:after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: block;
-  height: 100%;
-}
-
-.app.front_app .main_content table.table tbody td .state.started:after {
-  background-color: #545454;
-  width: 20%;
-}
-
-.app.front_app .main_content table.table tbody td .state.created:after {
-  background-color: #0582BE;
-  width: 20%;
-}
-
-.app.front_app .main_content table.table tbody td .state.declined:after {
-  background-color: red;
-  width: 100%;
-}
-
-.app.front_app .main_content table.table tbody td .state.processing:after {
-  background-color: orange;
-  width: 50%;
-}
-
-.app.front_app .main_content table.table tbody td .state.successful:after {
-  background-color: green;
-  width: 100%;
-}
-
-.app.front_app .main_content table.table tbody td.started {
-  color: #545454;
-}
-
-.app.front_app .main_content table.table tbody td.created {
-  color: #0582BE;
-}
-
-.app.front_app .main_content table.table tbody td.declined {
-  color: red;
-}
-
-.app.front_app .main_content table.table tbody td.processing {
-  color: orange;
-}
-
-.app.front_app .main_content table.table tbody td.successful {
-  color: green;
-}
-
 .app .sidebar {
   position: fixed;
   height: 100vh;
@@ -317,6 +255,7 @@ button:focus {
   -ms-grid-column: 2;
   -ms-grid-column-span: 1;
   grid-column: 2/3;
+  overflow: hidden;
 }
 
 .app .main .top {
@@ -454,6 +393,10 @@ button:focus {
   -ms-grid-columns: auto 550px;
       grid-template-columns: auto 550px;
   height: 100vh;
+}
+
+.auth #my-signin2 div {
+  margin: auto;
 }
 
 .auth .hero {
@@ -994,6 +937,68 @@ button:focus {
   border-left: none;
 }
 
+.signatures .state {
+  position: relative;
+  width: 100%;
+  height: 8px;
+  background: darkgray;
+  display: block;
+}
+
+.signatures .state:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  height: 100%;
+}
+
+.signatures .state.started:after {
+  background-color: #545454;
+  width: 20%;
+}
+
+.signatures .state.created:after {
+  background-color: #0582BE;
+  width: 20%;
+}
+
+.signatures .state.declined:after {
+  background-color: red;
+  width: 100%;
+}
+
+.signatures .state.processing:after {
+  background-color: orange;
+  width: 50%;
+}
+
+.signatures .state.successful:after {
+  background-color: green;
+  width: 100%;
+}
+
+.signatures.started {
+  color: #545454;
+}
+
+.signatures.created {
+  color: #0582BE;
+}
+
+.signatures.declined {
+  color: red;
+}
+
+.signatures.processing {
+  color: orange;
+}
+
+.signatures.successful {
+  color: green;
+}
+
 .signatures_detail header {
   display: -ms-grid;
   display: grid;
@@ -1178,13 +1183,15 @@ button:focus {
   top: 0;
   right: -1500px;
   width: 70%;
-  height: 100vh;
+  height: 100%;
   padding: 40px;
+  padding-bottom: 60px;
   background: #fff;
   -webkit-box-shadow: -10px 0 20px rgba(0, 0, 0, 0.2);
           box-shadow: -10px 0 20px rgba(0, 0, 0, 0.2);
   opacity: 0;
   z-index: 100;
+  overflow-y: auto;
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
 }
@@ -1592,6 +1599,7 @@ button:focus {
   color: #153667;
   margin-bottom: 30px;
   margin-top: 20px;
+  font-size: 20px;
 }
 
 .profile input {
@@ -1614,7 +1622,7 @@ button:focus {
       -ms-flex-direction: column;
           flex-direction: column;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   background: rgba(21, 54, 103, 0.9);
   z-index: 100;
 }

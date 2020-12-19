@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
+    <meta name="google-signin-client_id" content="631001127644-qinv9m5930qhneumdggicadus8v8h0jq.apps.googleusercontent.com.apps.googleusercontent.com">
     <title>Firma Seguro</title>
     <link rel="shortcut icon" href="">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -19,6 +20,8 @@
 </head>
 
 <body>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v9.0" nonce="DttGj9ZW"></script>
     
     <div class="auth">
         <div class="hero">
@@ -44,14 +47,43 @@
             </form>
 
             <a class="forgot_password" href="">Olvidé mi Contraseña</a>
+
+            <div class="fb-login-button" data-width="300" data-size="large" data-button-type="login_with" data-layout="rounded" data-auto-logout-link="false" data-use-continue-as="true"></div>
+
+            <div class="google_button text-center">
+                <div id="my-signin2"></div>
+            </div>
         </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
+    <!-- Google apis for login buttton -->
+    <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+
     <!-- spinner -->
     <script src="./js/spinner.js"></script>
+
+    <script>
+        function onSuccess(googleUser) {
+          console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
+        }
+        function onFailure(error) {
+          console.log(error);
+        }
+        function renderButton() {
+          gapi.signin2.render('my-signin2', {
+            'scope': 'profile email',
+            'width': 240,
+            'height': 50,
+            'longtitle': true,
+            'theme': 'dark',
+            'onsuccess': onSuccess,
+            'onfailure': onFailure
+          });
+        }
+      </script>
 
 </body>
 </html>

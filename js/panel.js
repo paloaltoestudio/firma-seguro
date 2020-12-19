@@ -1,3 +1,4 @@
+const body = document.querySelector('body');
 const closeTrigger = document.querySelectorAll('.close a');
 const overlay = document.querySelector('.body_overlay');
 let panel = document.querySelector('.panel.open');
@@ -11,6 +12,7 @@ if(closeTrigger){
             e.preventDefault();
             e.target.closest('.panel').classList.remove('open');
             overlay.classList.remove('active');
+            body.style.overflow = '';
         });
     });
 }
@@ -20,6 +22,7 @@ if(overlay){
         e.preventDefault();
         panel.classList.remove('open');
         overlay.classList.remove('active');
+        body.style.overflow = '';
     });
 }
 
@@ -27,6 +30,7 @@ if(pdfTriggers){
     Array.from(pdfTriggers).map(pdfTrigger => {
         pdfTrigger.addEventListener('click', (e) => {
             e.preventDefault();
+            body.style.overflow = 'hidden';
             const pdfPanelClass = e.target.closest('a').getAttribute("href");
             const pdfPanel = document.querySelector('.' + pdfPanelClass);
             pdfPanel.classList.add('open');
@@ -56,6 +60,7 @@ if(editTriggers){
                 
                 targetPanel.classList.add('open');
                 overlay.classList.add('active');
+                body.style.overflow = 'hidden';
                 return panel = document.querySelector('.panel.open');
         });
     });

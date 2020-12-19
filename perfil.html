@@ -60,10 +60,19 @@
             </div>
 
             <div class="content">
+                <!-- loader -->
                 <div class="loader d-none">
                     <img src="images/loader.gif" alt="">
                     <h3 class="text">Guardando Información</h3>
                 </div>
+
+                <!-- Toast: save -->
+                <div role="alert" aria-live="assertive" aria-atomic="true" class="toast active" data-autohide="true">
+                    <div class="toast-body">
+                      Perfil actualizado
+                    </div>
+                </div>
+
                 <header>
                     <h1>Perfil</h1>
                 </header>
@@ -78,8 +87,35 @@
                                         <div class="col-sm-6">
                                             <div class="form-group">
                                                 <label for="">Usuario</label>
-                                                <input type="text" class="form-control" value="Yvega" disabled>
+                                                <input type="text" class="form-control" value="Yilmar" disabled>
                                             </div>
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label for="">Primer Nombre</label>
+                                                        <input type="text" class="form-control" value="Yilmar">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label for="">Segundo Nombre</label>
+                                                        <input type="text" class="form-control" value="José">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label for="">Primer Apellido</label>
+                                                        <input type="text" class="form-control" value="Vega">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="form-group">
+                                                        <label for="">Segundo Apellido</label>
+                                                        <input type="text" class="form-control" value="de la Trinidad">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
                                             <div class="form-group">
                                                 <label for="">Email</label>
                                                 <input type="email" class="form-control" value="Yvega@tredasolutions.com">
@@ -112,8 +148,6 @@
                                         </div>
                                     </div>
                                 </form>
-                            </div>
-                        </div>
                     </div>
                 </div>
 
@@ -136,9 +170,6 @@
 
     <!-- Slider panel -->
     <script src="js/panel.js"></script>
-
-    <!-- Toast -->
-    <script src="js/toast.js"></script>
 
     <script>
         $('.datepicker').datepicker({

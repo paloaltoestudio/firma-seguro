@@ -401,95 +401,19 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js" integrity="sha512-T/tUfKSV1bihCnd+MxKD0Hm1uBBroVYBOYSk1knyvQ9VyZJpc/ALb4P0r6ubwVPSGB2GvjeoMAJJImBG12TiaQ==" crossorigin="anonymous"></script>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/js/umd/util.js" integrity="sha512-LsEwFGlbBmTbjVTzd3kwfwZhaAXHxbiJ8k2Q8IrEgPxAUaAtZ2L8ro1JF4PNqaXGenGZKgaKjk+iW/Mdecl4ig==" crossorigin="anonymous"></script> -->
+    
+    <!-- Signer add/edit panel -->
+    <script src="./js/panel.js"></script>
+
+    <!-- Toast notification -->
+    <script src="./js/toast.js"></script>
+
 
     <!-- Datepickker setup -->
     <script>
         $('.datepicker').datepicker({
             format: 'mm/dd/yyyy',
             startDate: '-3d'
-        });
-    </script>
-
-    <!-- Signer add/edit panel -->
-    <script>
-        const closeTrigger = document.querySelectorAll('.close a');
-        let editTriggers = document.querySelectorAll('.edit');
-        editTriggers = Array.from(editTriggers);
-        const overlay = document.querySelector('.body_overlay');
-        const editSigner = document.querySelector('.edit_signer');
-        let panel = document.querySelector('.panel.open');
-        const editSignerOpen = document.querySelector('.edit_signer.open');
-
-        const pdfTriggers = document.querySelectorAll('.pdfTrigger');
-
-        Array.from(closeTrigger).map( close => {
-            close.addEventListener('click', (e) => {
-                e.preventDefault();
-                e.target.closest('.panel').classList.remove('open');
-                overlay.classList.remove('active');
-            });
-        });
-
-        overlay.addEventListener('click', (e) => {
-            e.preventDefault();
-            panel.classList.remove('open');
-            overlay.classList.remove('active');
-        });
-
-        editTriggers.map(editTrigger => {
-            editTrigger.addEventListener('click', (e) => {
-                    e.preventDefault();
-
-                    let targetPanelName = e.target.getAttribute('href');
-                    let targetPanel = document.querySelector('.' + targetPanelName);
-                    console.log(e.target.getAttribute('href'))
-
-                    if(!targetPanelName){
-                        console.log(e.target.parentElement.getAttribute('href'));
-                        targetPanelName = e.target.parentElement.getAttribute('href');
-                        targetPanel = document.querySelector('.' + targetPanelName);
-                    } 
-                    
-                    
-                    targetPanel.classList.add('open');
-                    overlay.classList.add('active');
-                    return panel = document.querySelector('.panel.open');
-            });
-        });
-
-        Array.from(pdfTriggers).map(pdfTrigger => {
-            pdfTrigger.addEventListener('click', (e) => {
-                e.preventDefault();
-                const pdfPanelClass = e.target.closest('a').getAttribute("href");
-                const pdfPanel = document.querySelector('.' + pdfPanelClass);
-                pdfPanel.classList.add('open');
-                overlay.classList.add('active');
-                return panel = document.querySelector('.panel.open');
-            });
-        })
-        
-    </script>
-
-    <script>
-        const saveButton = document.querySelector('.save_signer');
-        const toast = document.querySelector('.toast.save');
-
-        saveButton.addEventListener('click', (e) => {
-            e.preventDefault();
-            toast.classList.add('active');
-            $('.toast.save.active').toast({animation: true, delay: 1000});
-            $('.toast.save.active').toast('show');
-        });
-
-        $('.toast').on('shown.bs.toast', function(){
-            setTimeout(() => {
-                toast.classList.add('hide_toast');
-            }, 800);
-        });
-
-        $('.toast').on('hidden.bs.toast', function(){
-            toast.classList.remove('active');
-            toast.classList.remove('hide_toast');
         });
     </script>
 

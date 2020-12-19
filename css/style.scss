@@ -196,78 +196,6 @@ button:focus {
                     td {
                         color: #616161;
                         border: none;
-        
-                        .state {
-                            position: relative;
-                            width: 100%;
-                            height: 8px;
-                            background: rgb(169, 169, 169);
-                            display: block;
-        
-                            &:after {
-                                content: '';
-                                position: absolute;
-                                top: 0;
-                                left: 0;
-                                display: block;
-                                height: 100%;
-                            }
-        
-                            &.started {
-                                &:after {
-                                    background-color: rgb(84, 84, 84);
-                                    width: 20%;
-                                }
-                            }
-        
-                            &.created {
-                                &:after {
-                                    background-color:$light_blue;
-                                    width: 20%;
-                                }
-                            }
-        
-                            &.declined {
-                                &:after {
-                                    background-color:red;
-                                    width: 100%;
-                                }
-                            }
-        
-                            &.processing {
-                                &:after {
-                                    background-color:orange;
-                                    width: 50%;
-                                }
-                            }
-        
-                            &.successful {
-                                &:after {
-                                    background-color:green;
-                                    width: 100%;
-                                }
-                            }
-                        }
-        
-                        &.started {
-                            color: rgb(84, 84, 84);
-                        }
-        
-                        &.created {
-                            color:$light_blue;
-                        }
-        
-                        &.declined {
-                            color:red;
-                        }
-        
-                        &.processing {
-                            color:orange;
-                        }
-        
-                        &.successful {
-                            color:green;
-                        }
                     }
                 }
             }
@@ -322,6 +250,7 @@ button:focus {
     .main {
         position: relative;
         grid-column: 2/3;
+        overflow: hidden;
 
         .top {
             background: rgb(36,135,227);
@@ -461,6 +390,10 @@ button:focus {
     display: grid;
     grid-template-columns: auto 550px;
     height: 100vh;
+
+    #my-signin2 div {
+        margin: auto;
+    }
 
     .hero {
         position: relative;
@@ -954,7 +887,77 @@ button:focus {
         }
     }
 
-    
+    .state {
+        position: relative;
+        width: 100%;
+        height: 8px;
+        background: rgb(169, 169, 169);
+        display: block;
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+            height: 100%;
+        }
+
+        &.started {
+            &:after {
+                background-color: rgb(84, 84, 84);
+                width: 20%;
+            }
+        }
+
+        &.created {
+            &:after {
+                background-color:$light_blue;
+                width: 20%;
+            }
+        }
+
+        &.declined {
+            &:after {
+                background-color:red;
+                width: 100%;
+            }
+        }
+
+        &.processing {
+            &:after {
+                background-color:orange;
+                width: 50%;
+            }
+        }
+
+        &.successful {
+            &:after {
+                background-color:green;
+                width: 100%;
+            }
+        }
+    }
+
+    &.started {
+        color: rgb(84, 84, 84);
+    }
+
+    &.created {
+        color:$light_blue;
+    }
+
+    &.declined {
+        color:red;
+    }
+
+    &.processing {
+        color:orange;
+    }
+
+    &.successful {
+        color:green;
+    }
 }
 
 // Mis Firmas Detalle
@@ -1133,16 +1136,18 @@ button:focus {
 }
 
 .panel {
-    position: fixed;
+    position: fixed; 
     top: 0;
     right: -1500px;
     width: 70%;
-    height: 100vh;
+    height: 100%;
     padding: 40px;
+    padding-bottom: 60px;
     background: #fff;
     box-shadow: -10px 0 20px rgba(0,0,0,0.2);
     opacity: 0;
     z-index: 100;
+    overflow-y: auto;
     transition: all 0.2s ease;
 
     &.open {
@@ -1561,6 +1566,7 @@ button:focus {
         color: $blue;
         margin-bottom: 30px;
         margin-top: 20px;
+        font-size: 20px;
     }
 
     input {
@@ -1577,7 +1583,7 @@ button:focus {
     align-items: center;
     flex-direction: column;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     background: rgba($color: $blue, $alpha: 0.9);
     z-index: 100;
 
