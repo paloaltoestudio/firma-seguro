@@ -20,8 +20,19 @@
 </head>
 
 <body>
-    <div id="fb-root"></div>
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v9.0" nonce="DttGj9ZW"></script>
+    <script>
+        window.fbAsyncInit = function() {
+          FB.init({
+            appId            : '2019535768201428',
+            autoLogAppEvents : true,
+            xfbml            : true,
+            version          : 'v9.0'
+          });
+        };
+      </script>
+      <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+
+   
     
     <div class="auth">
         <div class="hero">
@@ -48,7 +59,7 @@
 
             <a class="forgot_password" href="">Olvidé mi Contraseña</a>
 
-            <div class="fb-login-button" data-width="300" data-size="large" data-button-type="login_with" data-layout="rounded" data-auto-logout-link="false" data-use-continue-as="true"></div>
+            <div class="fb-login-button" data-width="300" data-size="large" data-button-type="login_with" data-layout="rounded" data-auto-logout-link="false" data-use-continue-as="false"></div>
 
             <div class="google_button text-center">
                 <div id="my-signin2"></div>

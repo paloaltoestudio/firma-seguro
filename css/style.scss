@@ -391,8 +391,17 @@ button:focus {
     grid-template-columns: auto 550px;
     height: 100vh;
 
+    // Google login button wrapper
     #my-signin2 div {
         margin: auto;
+    }
+
+    // FB login button wrapper
+    .fb_iframe_widget {
+        display: block;
+        text-align: center;
+        margin-bottom: 15px;
+        margin-top: 30px;
     }
 
     .hero {
