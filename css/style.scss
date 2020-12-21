@@ -127,6 +127,14 @@ button:focus {
             background-color:red;
         }
     }
+    &.orange {
+        color: $orange;
+        border-color: $orange;
+
+        &:hover {
+            background-color:$orange;
+        }
+    }
 }
 
 .modal {

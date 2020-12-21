@@ -60,6 +60,39 @@
             </div>
 
             <div class="content">
+
+                <!-- Modal: delete sign -->
+                <div id="delete_sign_modal" class="modal fade" tabindex="-1" role="dialog">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                      <div class="modal-content">
+                        <div class="modal-body">
+                            <img src="images/wait.svg" height="180" alt="" class="modal_img">
+                          <p class="text-center">¿Estas seguro que quieres eliminar esta firma?</p>
+                            <div class="text-center">
+                                <a href="" class="link small delete_sign">Eliminar firma</a>
+                                <a href="" class="link secundary small" data-dismiss="modal" aria-label="Close">Cancelar</a>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                
+                <!-- Modal: cancel sign -->
+                <div id="cancel_sign_modal" class="modal fade" tabindex="-1" role="dialog">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                      <div class="modal-content">
+                        <div class="modal-body">
+                            <img src="images/wait.svg" height="180" alt="" class="modal_img">
+                          <p class="text-center">¿Estas seguro que quieres cancelar este proceso de firma?</p>
+                            <div class="text-center">
+                                <a href="" class="link small cancel_sign">Cancelar proceso</a>
+                                <a href="" class="link secundary small" data-dismiss="modal" aria-label="Close">Cancelar</a>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+
                 <header>
                     <h1>Mis Firmas</h1>
                 </header>
@@ -137,8 +170,23 @@
                                     <td>2020-08-10</td>
                                     <td>2020-08-10</td>
                                     <td>
-                                        <a href="" class="link secundary small red"><i class="fas fa-trash-alt"></i></a>
-                                        <a href="" class="link secundary small"><i class="fas fa-search"></i></a>
+                                        <span data-toggle="tooltip" data-placement="top" title="Cancelar Proceso">
+                                            <a href="#" data-toggle="modal" data-target="#cancel_sign_modal" class="link secundary small orange">
+                                                <i class="fas fa-times"></i>
+                                            </a>
+                                        </span>
+
+                                        <span data-toggle="tooltip" data-placement="top" title="Eliminar Firma"> 
+                                            <a href="" data-toggle="modal" data-target="#delete_sign_modal" class="link secundary small red">
+                                                <i class="fas fa-trash-alt"></i>
+                                            </a>
+                                        </span>
+
+                                        <span data-toggle="tooltip" data-placement="top" title="Ver Detalle">
+                                            <a href="" class="link secundary small">
+                                                <i class="fas fa-search"></i>
+                                            </a>
+                                        </span>
                                     </td>
                                 </tr>
                                 <tr>
@@ -148,8 +196,23 @@
                                     <td>2020-08-10</td>
                                     <td>2020-08-10</td>
                                     <td>
-                                        <a href="" class="link secundary small red"><i class="fas fa-trash-alt"></i></a>
-                                        <a href="" class="link secundary small"><i class="fas fa-search"></i></a>
+                                        <span data-toggle="tooltip" data-placement="top" title="Cancelar Proceso">
+                                            <a href="#" data-toggle="modal" data-target="#cancel_sign_modal" class="link secundary small orange">
+                                                <i class="fas fa-times"></i>
+                                            </a>
+                                        </span>
+
+                                        <span data-toggle="tooltip" data-placement="top" title="Eliminar Firma"> 
+                                            <a href="" data-toggle="modal" data-target="#delete_sign_modal" class="link secundary small red">
+                                                <i class="fas fa-trash-alt"></i>
+                                            </a>
+                                        </span>
+
+                                        <span data-toggle="tooltip" data-placement="top" title="Ver Detalle">
+                                            <a href="" class="link secundary small">
+                                                <i class="fas fa-search"></i>
+                                            </a>
+                                        </span>
                                     </td>
                                 </tr>
                                 <tr>
@@ -159,8 +222,23 @@
                                     <td>2020-08-10</td>
                                     <td>2020-08-10</td>
                                     <td>
-                                        <a href="" class="link secundary small red"><i class="fas fa-trash-alt"></i></a>
-                                        <a href="" class="link secundary small"><i class="fas fa-search"></i></a>
+                                        <span data-toggle="tooltip" data-placement="top" title="Cancelar Proceso">
+                                            <a href="#" data-toggle="modal" data-target="#cancel_sign_modal" class="link secundary small orange">
+                                                <i class="fas fa-times"></i>
+                                            </a>
+                                        </span>
+
+                                        <span data-toggle="tooltip" data-placement="top" title="Eliminar Firma"> 
+                                            <a href="" data-toggle="modal" data-target="#delete_sign_modal" class="link secundary small red">
+                                                <i class="fas fa-trash-alt"></i>
+                                            </a>
+                                        </span>
+
+                                        <span data-toggle="tooltip" data-placement="top" title="Ver Detalle">
+                                            <a href="" class="link secundary small">
+                                                <i class="fas fa-search"></i>
+                                            </a>
+                                        </span>
                                     </td>
                                 </tr>
                                 <tr>
@@ -170,8 +248,23 @@
                                     <td>2020-08-10</td>
                                     <td>2020-08-10</td>
                                     <td>
-                                        <a href="" class="link secundary small red"><i class="fas fa-trash-alt"></i></a>
-                                        <a href="" class="link secundary small"><i class="fas fa-search"></i></a>
+                                        <span data-toggle="tooltip" data-placement="top" title="Cancelar Proceso">
+                                            <a href="#" data-toggle="modal" data-target="#cancel_sign_modal" class="link secundary small orange">
+                                                <i class="fas fa-times"></i>
+                                            </a>
+                                        </span>
+
+                                        <span data-toggle="tooltip" data-placement="top" title="Eliminar Firma"> 
+                                            <a href="" data-toggle="modal" data-target="#delete_sign_modal" class="link secundary small red">
+                                                <i class="fas fa-trash-alt"></i>
+                                            </a>
+                                        </span>
+
+                                        <span data-toggle="tooltip" data-placement="top" title="Ver Detalle">
+                                            <a href="" class="link secundary small">
+                                                <i class="fas fa-search"></i>
+                                            </a>
+                                        </span>
                                     </td>
                                 </tr>
                                 <tr>
@@ -181,8 +274,23 @@
                                     <td>2020-08-10</td>
                                     <td>2020-08-10</td>
                                     <td>
-                                        <a href="" class="link secundary small red"><i class="fas fa-trash-alt"></i></a>
-                                        <a href="" class="link secundary small"><i class="fas fa-search"></i></a>
+                                        <span data-toggle="tooltip" data-placement="top" title="Cancelar Proceso">
+                                            <a href="#" data-toggle="modal" data-target="#cancel_sign_modal" class="link secundary small orange">
+                                                <i class="fas fa-times"></i>
+                                            </a>
+                                        </span>
+
+                                        <span data-toggle="tooltip" data-placement="top" title="Eliminar Firma"> 
+                                            <a href="" data-toggle="modal" data-target="#delete_sign_modal" class="link secundary small red">
+                                                <i class="fas fa-trash-alt"></i>
+                                            </a>
+                                        </span>
+
+                                        <span data-toggle="tooltip" data-placement="top" title="Ver Detalle">
+                                            <a href="" class="link secundary small">
+                                                <i class="fas fa-search"></i>
+                                            </a>
+                                        </span>
                                     </td>
                                 </tr>
                                 
@@ -202,14 +310,33 @@
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js" integrity="sha512-T/tUfKSV1bihCnd+MxKD0Hm1uBBroVYBOYSk1knyvQ9VyZJpc/ALb4P0r6ubwVPSGB2GvjeoMAJJImBG12TiaQ==" crossorigin="anonymous"></script>
 
+    <!-- Initialize tooltip -->
+    <script>
+        $('a').tooltip();
+        $('*').tooltip();
+    </script>
+
+    <!-- Initialize datapicker -->
     <script>
         $('.datepicker').datepicker({
             format: 'mm/dd/yyyy',
             startDate: '-3d'
         });
+    </script>
+
+    <!-- Close modal: delete sign -->
+    <script>
+        const deleteSign = document.querySelector('.delete_sign');
+
+            deleteSign.addEventListener('click', (e) => {
+                e.preventDefault();
+                $('#delete_sign_modal').modal('hide');
+            });
+        
     </script>
 
 </body>

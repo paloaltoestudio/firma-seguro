@@ -90,13 +90,45 @@
                             <img src="images/wait.svg" height="180" alt="" class="modal_img">
                           <p class="text-center">¿Estas seguro que quieres eliminar el firmante de este documento?</p>
                             <div class="text-center">
-                                <a href="" class="link small delete_trigger">Quitar firmante</a>
+                                <a href="" class="link small delete_trigger">Eliminar firmante</a>
                                 <a href="" class="link secundary small" data-dismiss="modal" aria-label="Close">Cancelar</a>
                             </div>
                         </div>
                       </div>
                     </div>
                   </div>
+
+                <!-- Modal: delete sign -->
+                <div id="delete_sign_modal" class="modal fade" tabindex="-1" role="dialog">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                      <div class="modal-content">
+                        <div class="modal-body">
+                            <img src="images/wait.svg" height="180" alt="" class="modal_img">
+                          <p class="text-center">¿Estas seguro que quieres eliminar esta firma?</p>
+                            <div class="text-center">
+                                <a href="" class="link small delete_sign">Eliminar firma</a>
+                                <a href="" class="link secundary small" data-dismiss="modal" aria-label="Close">Cancelar</a>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                <!-- Modal: cancel sign -->
+                <div id="cancel_sign_modal" class="modal fade" tabindex="-1" role="dialog">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                      <div class="modal-content">
+                        <div class="modal-body">
+                            <img src="images/wait.svg" height="180" alt="" class="modal_img">
+                          <p class="text-center">¿Estas seguro que quieres cancelar este proceso de firma?</p>
+                            <div class="text-center">
+                                <a href="" class="link small cancel_sign">Cancelar proceso</a>
+                                <a href="" class="link secundary small" data-dismiss="modal" aria-label="Close">Cancelar</a>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
 
                 <!-- Modal: resend -->
                 <div id="resend_modal" class="modal fade" tabindex="-1" role="dialog">
@@ -273,6 +305,12 @@
                         </header>
 
                         <div class="row">
+                            <div class="col-sm-12">
+                                <a href="#" data-toggle="modal" data-target="#cancel_sign_modal" class="link secundary small orange"><i class="fas fa-times"></i> Cancelar Firma</a>
+                                <a href="#" data-toggle="modal" data-target="#delete_sign_modal" class="link secundary small red"><i class="far fa-trash-alt"></i> Eliminar Firma</a>
+                                <hr>
+                            </div>
+                            
                             <div class="col-sm-6">
                                 <h4>Solicitante</h4>
                                 <div class="signature_item">
@@ -476,6 +514,25 @@
                 });
             });
         });
+        
+    </script>
+
+    <script>
+        const deleteSign = document.querySelector('.delete_sign');
+
+            deleteSign.addEventListener('click', (e) => {
+                e.preventDefault();
+                $('#delete_sign_modal').modal('hide');
+            });
+        
+    </script>
+    <script>
+        const cancelSign = document.querySelector('.cancel_sign');
+
+            cancelSign.addEventListener('click', (e) => {
+                e.preventDefault();
+                $('#cancel_sign_modal').modal('hide');
+            });
         
     </script>
 

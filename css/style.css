@@ -141,6 +141,15 @@ button:focus {
   background-color: red;
 }
 
+.link.orange {
+  color: #E36924;
+  border-color: #E36924;
+}
+
+.link.orange:hover {
+  background-color: #E36924;
+}
+
 .modal .modal-body {
   padding: 30px 20px;
 }
