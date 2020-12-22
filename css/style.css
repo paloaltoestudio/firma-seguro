@@ -415,6 +415,54 @@ button:focus {
   margin-top: 30px;
 }
 
+.auth .sm_buttons {
+  margin-top: 40px;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.auth .sm_buttons a {
+  width: 350px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.auth .sm_buttons a img {
+  width: 24px;
+  height: auto;
+  margin-right: 10px;
+}
+
+.auth .sm_buttons .fb {
+  background-color: #227bef;
+  border-color: #227bef;
+  text-transform: none;
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.auth .sm_buttons .google {
+  background-color: #4688f1;
+  border-color: #4688f1;
+  text-transform: none;
+  font-weight: bold;
+  font-size: 16px;
+}
+
 .auth .hero {
   position: relative;
   background: url("../images/login_bg.png") no-repeat;

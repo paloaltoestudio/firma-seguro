@@ -20,20 +20,6 @@
 </head>
 
 <body>
-    <script>
-        window.fbAsyncInit = function() {
-          FB.init({
-            appId            : '2019535768201428',
-            autoLogAppEvents : true,
-            xfbml            : true,
-            version          : 'v9.0'
-          });
-        };
-      </script>
-      <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
-
-   
-    
     <div class="auth">
         <div class="hero">
             <header>
@@ -59,10 +45,16 @@
 
             <a class="forgot_password" href="">Olvidé mi Contraseña</a>
 
-            <div class="fb-login-button" data-width="300" data-size="large" data-button-type="login_with" data-layout="rounded" data-auto-logout-link="false" data-use-continue-as="false"></div>
 
-            <div class="google_button text-center">
-                <div id="my-signin2"></div>
+            <div class="sm_buttons">
+              <a href="" class="link fb">
+                <img src="images/fb.png" alt="">
+                Inicia sesión con Facebook
+              </a>
+              <a href="" class="link google">
+                <img src="images/google.png" alt="">
+                Inicia sesión con Google
+              </a>
             </div>
         </div>
     </div>
@@ -70,31 +62,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-    <!-- Google apis for login buttton -->
-    <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
-
     <!-- spinner -->
     <script src="./js/spinner.js"></script>
-
-    <script>
-        function onSuccess(googleUser) {
-          console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
-        }
-        function onFailure(error) {
-          console.log(error);
-        }
-        function renderButton() {
-          gapi.signin2.render('my-signin2', {
-            'scope': 'profile email',
-            'width': 240,
-            'height': 50,
-            'longtitle': true,
-            'theme': 'dark',
-            'onsuccess': onSuccess,
-            'onfailure': onFailure
-          });
-        }
-      </script>
-
 </body>
 </html>
