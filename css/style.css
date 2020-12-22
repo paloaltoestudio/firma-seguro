@@ -1286,6 +1286,8 @@ button:focus {
 
 .wallet .box form input {
   margin-bottom: 20px;
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 .wallet .box form button {
@@ -1295,6 +1297,10 @@ button:focus {
 
 .wallet .box form button i {
   margin-left: 10px;
+}
+
+.wallet .box form .msg.active {
+  color: red;
 }
 
 .box_front {

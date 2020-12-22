@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.standalone.min.css" integrity="sha512-TQQ3J4WkE/rwojNFo6OJdyu6G8Xe9z8rMrlF9y7xpFbQfW5g8aSWcygCQ4vqRiJqFsDsE1T6MoAOMJkFXlrI9A==" crossorigin="anonymous" />
-    <script type="text/javascript" src="https://checkout.wompi.co/widget.js"></script>
 
     <link rel="stylesheet" href="css/style.css"> 
     <link rel="stylesheet" href="css/responsive.css">   
@@ -72,22 +71,22 @@
                         <div class="box">
                             <h2>Recarga tu cuenta</h2>
 
-                            <form action="">
-                                <div class="form-group">
-                                    <label for="">¿Cuánto quieres recargar?</label>
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text">$</span>
-                                        </div>
-                                        <input type="text" class="form-control price">
-                                    </div>
 
-                                    <button class="form-control link pay">Recargar Saldo <i class="fas fa-chevron-right"></i></button>
-                                    <span class="help-block msg">Recarga mínima <strong>$10.000</strong></span>
-                                </div>
-                            </form>
-
-                              
+                            <form id="wompi_form">
+                                <p>Paga con tu medio preferido </p>
+                                <h4><strong>Total</strong> $10000</h4>
+                                <script
+                                  id="wompi"
+                                  src="https://checkout.wompi.co/widget.js"
+                                  data-render="button"
+                                  data-public-key="pub_test_yizQrtfE72njajXdq7rJNgLNedIL3KuN"
+                                  data-currency="COP"
+                                  data-amount-in-cents="1000000"
+                                  data-reference="4XMPGKWWPKWQ"
+                                  defer
+                                  >
+                                </script>
+                              </form>
                         </div>
                     </section>
                 </div>
@@ -106,50 +105,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js" integrity="sha512-T/tUfKSV1bihCnd+MxKD0Hm1uBBroVYBOYSk1knyvQ9VyZJpc/ALb4P0r6ubwVPSGB2GvjeoMAJJImBG12TiaQ==" crossorigin="anonymous"></script>
     
-
-    <script>
-        const payButton = document.querySelector('.pay');
-        const priceInput = document.querySelector('.price');
-        const msg = document.querySelector('.msg');
-
-        priceInput.addEventListener('keyup', () => {
-            if(priceInput.value.length >= 5 && priceInput.value >= 10000) {
-                priceInput.style.borderColor = 'green';
-                msg.style.color = 'green';
-            } else {
-                priceInput.style.borderColor = 'red';
-                msg.style.color = 'red';
-            }
-        });
-
-        
-        payButton.addEventListener('click', e => {
-            e.preventDefault();
-
-            if(priceInput.value.length >= 5 && priceInput.value >= 10000) {
-
-                msg.classList.remove('active');
-
-                const checkout = new WidgetCheckout({
-                    currency: 'COP',
-                    amountInCents: priceInput.value + '00',
-                    reference: 'AD002901223',
-                    publicKey: 'pub_test_yizQrtfE72njajXdq7rJNgLNedIL3KuN',
-                    redirectUrl: 'http://localhost:5500/confirmacion.html' // Opcional
-                })
-
-                checkout.open(function ( result ) {
-                  const transaction = result.transaction
-                  console.log('Transaction ID: ', transaction.id)
-                  console.log('Transaction object: ', transaction)
-                });
-            } else {
-                msg.classList.add('active');
-                priceInput.style.borderColor = 'red';
-            }
-        })
-
-    </script>
 
 </body>
 </html>

@@ -1246,6 +1246,7 @@ button:focus {
 
             input {
                 margin-bottom: 20px;
+                box-shadow: none;
             }
 
             button {
@@ -1255,6 +1256,10 @@ button:focus {
                 i {
                     margin-left: 10px;
                 }
+            }
+
+            .msg.active {
+                color: red;
             }
         }
     }
