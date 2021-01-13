@@ -19,6 +19,10 @@ body {
     font-family: $body_font;
 }
 
+.mobile_menu {
+    display: none;
+}
+
 @keyframes toast {
     0% {
         top: 60%;
@@ -159,6 +163,11 @@ button:focus {
 
 
 //Layout
+
+.mobile_logo {
+    display: none;
+}
+
 .app {
     display: grid;
     grid-template-columns: 290px auto;
@@ -1191,7 +1200,7 @@ button:focus {
 .panel {
     position: fixed; 
     top: 0;
-    right: -1500px;
+    right: -100vw;
     width: 70%;
     height: 100%;
     padding: 40px;

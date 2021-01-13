@@ -75,7 +75,7 @@
   }
   .auth .hero img.main_img {
     max-width: 400px;
-    width: 100%;
+    width: 80%;
   }
   .auth .hero img.bottom {
     position: relative;
@@ -84,6 +84,245 @@
     left: -20px;
     margin: 40px auto;
     display: block;
+  }
+  .auth .sm_buttons {
+    width: 80%;
+    margin: auto;
+    margin-top: 20px;
+  }
+  .auth .sm_buttons a {
+    width: 100%;
+    font-size: 14px !important;
+  }
+  .app {
+    -ms-grid-columns: auto;
+        grid-template-columns: auto;
+  }
+  .app .main {
+    grid-column: 1/-1;
+  }
+  .app .sidebar {
+    position: absolute;
+    left: -100vw;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+  }
+  .app .sidebar.active {
+    left: 0;
+  }
+  .app .sidebar .logo {
+    display: none;
+  }
+  .app .main .top {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 15px 10px;
+  }
+  .modal-content .link {
+    margin-bottom: 10px;
+  }
+  .mobile_menu {
+    display: block;
+  }
+  .mobile_menu .menu_trigger {
+    position: relative;
+    width: 20px;
+    top: 3px;
+    display: inline-block;
+    margin-right: 10px;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+    z-index: 100;
+  }
+  .mobile_menu .menu_trigger i {
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+    font-size: 24px;
+  }
+  .mobile_menu .menu_trigger.active i {
+    -webkit-transform: rotateZ(90deg);
+            transform: rotateZ(90deg);
+  }
+  .link span {
+    display: none;
+  }
+  .panel {
+    width: 100%;
+  }
+  .app .main .top .user {
+    margin: 0;
+  }
+  .app .main .top .credit span {
+    display: none;
+  }
+  .app .main .top .logout {
+    padding-left: 10px;
+    margin: 0;
+  }
+  .app .main .top .logout span {
+    display: none;
+  }
+  .signers_home {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding-top: 10px;
+    margin-bottom: 50px;
+  }
+  .signers_home .signers_home_item {
+    margin-bottom: 40px;
+  }
+  .signers_home .signers_home_item span.img {
+    margin: auto;
+  }
+  .signers_home .signers_home_item span.name {
+    margin-top: 10px;
+  }
+  .signers_home .link_wrapper {
+    margin-top: 0px;
+  }
+  .signers_box {
+    margin-bottom: 40px;
+  }
+  .signers_box .signers_box_inner {
+    padding: 20px;
+  }
+  .signers_box .steps_header ul li {
+    margin-bottom: 10px;
+  }
+  .signers_box .steps_header ul li img {
+    display: none;
+  }
+  .signers_box .steps .step_content {
+    padding: 0;
+  }
+  .signers_box .steps.step_2 .signers_form .form-group {
+    padding: 0;
+  }
+  .signers_box .steps .buttons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  .signers_box .steps .buttons a {
+    display: block;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .app .main header.main_route {
+    padding-bottom: 110px;
+  }
+  .route {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .route .item {
+    padding: 0;
+  }
+  .route .item .img {
+    width: 150px;
+    height: 150px;
+  }
+  .route .item .img img {
+    width: 60%;
+  }
+  #drop-area {
+    width: 100%;
+  }
+  .billing {
+    padding: 20px 0;
+    margin-bottom: 40px;
+  }
+  .billing .filter {
+    margin-bottom: 0px;
+  }
+  .billing .filter .input-group {
+    margin-bottom: 20px;
+  }
+  .signatures {
+    padding-top: 10px;
+    margin-bottom: 40px;
+  }
+  .signatures .filter .input-group {
+    margin-bottom: 10px;
+  }
+  .signatures table .link {
+    margin-bottom: 10px;
+  }
+  .signatures_detail .link {
+    margin-bottom: 10px;
+  }
+  .signatures_detail header h3 {
+    text-align: left;
+  }
+  .profile {
+    margin-bottom: 40px;
+  }
+  .wallet .box {
+    margin-top: 0;
+    width: 100%;
+  }
+  .wallet .box form {
+    padding: 20px;
+  }
+  .mobile_logo {
+    display: block;
+    margin-right: 15px;
+    padding-left: 10px;
+  }
+  .mobile_logo img {
+    width: 50px;
+  }
+  .app .main .sub_top {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 10px;
+  }
+  .app .main .main_content {
+    margin-bottom: 40px;
+  }
+  .box_front.review_doc ul li {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    text-align: center;
+  }
+  .box_front.review_doc ul li .action_links {
+    margin-top: 10px;
+  }
+  .review .doc {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .review .doc .link {
+    margin-top: 10px;
   }
 }
 /*# sourceMappingURL=responsive.css.map */

@@ -23,6 +23,8 @@
     }
 }
 @media all and (max-width: 768px){
+
+    //login
     .auth {
         display: flex;
         flex-direction: column-reverse;
@@ -78,7 +80,7 @@
 
     .auth .hero img.main_img {
         max-width: 400px;
-        width: 100%;
+        width: 80%;
     }
 
     .auth .hero img.bottom {
@@ -88,5 +90,289 @@
         left: -20px;
         margin: 40px auto;
         display: block;
+    }
+
+    .auth .sm_buttons {
+        width: 80%;
+        margin: auto;
+        margin-top: 20px;
+    }
+
+    .auth .sm_buttons a {
+        width: 100%;
+        font-size: 14px !important;
+    }
+
+    // General
+    .app {
+        grid-template-columns: auto;
+    }
+
+    .app .main {
+        grid-column: 1/-1;
+    }
+
+    .app .sidebar {
+        position: absolute;
+        left: -100vw;
+        transition: all 0.2s ease;
+
+        &.active {
+            left: 0;
+        }
+    }
+
+    .app .sidebar .logo {
+        display: none;
+    }
+
+    .app .main .top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 10px;
+    }
+
+    .modal-content {
+        .link {
+            margin-bottom: 10px;
+        }
+    }
+
+    .mobile_menu {
+        display: block;
+        
+        .menu_trigger {
+            position: relative;
+            width: 20px;
+            top: 3px;
+            display: inline-block;
+            margin-right: 10px;
+            transition: all 0.2s ease;
+            z-index: 100;
+            
+            i {
+                transition: all 0.2s ease;
+                font-size: 24px;
+            }
+
+            &.active {
+                i {
+                    transform: rotateZ(90deg);
+                }
+            }
+        }
+    }
+
+    .link {
+        span {
+            display: none;
+        }
+    }
+
+    // Sliding panel
+    .panel {
+        width: 100%;
+    }
+
+    .app .main .top .user {
+        margin: 0;
+    }
+
+    .app .main .top .credit span {
+        display: none;
+    }
+
+    .app .main .top .logout {
+        padding-left: 10px;
+        margin: 0;
+    }
+
+    .app .main .top .logout span {
+        display: none;
+    }
+
+    // Signer home
+    .signers_home {
+        display: flex;
+        flex-direction: column;
+        padding-top: 10px;
+        margin-bottom: 50px;
+    }
+
+    .signers_home .signers_home_item {
+        margin-bottom: 40px;
+    }
+
+    .signers_home .signers_home_item span.img {
+        margin: auto;
+    }
+
+    .signers_home .signers_home_item span.name {
+        margin-top: 10px;
+    }
+
+    .signers_home .link_wrapper {
+        margin-top: 0px;
+    }
+
+    // Add signer
+
+    .signers_box {
+        margin-bottom: 40px;
+    }
+
+    .signers_box .signers_box_inner {
+        padding: 20px;
+    }
+
+    .signers_box .steps_header ul li {
+        margin-bottom: 10px;
+
+        img {
+            display: none;
+        }
+    }
+
+    .signers_box .steps .step_content {
+        padding: 0;
+    }
+
+    .signers_box .steps.step_2 .signers_form .form-group {
+        padding: 0;
+    }
+
+    .signers_box .steps .buttons {
+        display: flex;
+        flex-direction: column-reverse;
+
+        a {
+            display: block;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+    }
+
+    //Signers route
+    .app .main header.main_route {
+        padding-bottom: 110px;
+    }
+
+    .route {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .route .item {
+        padding: 0;
+    }
+
+    .route .item .img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .route .item .img img {
+        width: 60%;
+    }
+
+    // Load documents
+
+    #drop-area {
+        width: 100%;
+    }
+
+    // Billing
+    .billing {
+        padding: 20px 0;
+        margin-bottom: 40px;
+    }
+    .billing .filter {
+        margin-bottom: 0px;
+        .input-group {
+            margin-bottom: 20px;
+        }
+    }
+
+    // Signatures
+    .signatures {
+        padding-top: 10px;
+        margin-bottom: 40px;
+
+        .filter {
+            .input-group {
+                margin-bottom: 10px;
+            }
+        }
+
+        table {
+            .link {
+                margin-bottom: 10px;
+            }
+        }
+    }
+
+    .signatures_detail {
+        .link {
+            margin-bottom: 10px;
+        }
+    }
+    .signatures_detail header h3 {
+        text-align: left;
+    }
+
+    // Profile
+    .profile {
+        margin-bottom: 40px;
+    }
+
+    // Wallet
+    .wallet .box {
+        margin-top: 0;
+        width: 100%;
+    }
+
+    .wallet .box form {
+        padding: 20px;
+    }
+
+    // FRONT
+    .mobile_logo {
+        display: block;
+        margin-right: 15px;
+        padding-left: 10px;
+
+        img {
+            width: 50px;
+        }
+    }
+
+    .app .main .sub_top {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .app .main .main_content {
+        margin-bottom: 40px;
+    }
+
+    // Doc list
+    .box_front.review_doc ul li {
+        flex-direction: column;
+        text-align: center;
+
+        .action_links {
+            margin-top: 10px;
+        }
+    }
+
+    // Review doc
+    .review .doc {
+        flex-direction: column;
+
+        .link {
+            margin-top: 10px;
+        }
     }
 }

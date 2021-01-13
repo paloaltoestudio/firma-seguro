@@ -5,6 +5,10 @@ body {
   font-family: "Open Sans", sans-serif;
 }
 
+.mobile_menu {
+  display: none;
+}
+
 @-webkit-keyframes toast {
   0% {
     top: 60%;
@@ -166,6 +170,10 @@ button:focus {
   font-size: 24px;
   margin-bottom: 20px;
   color: #0582BE;
+}
+
+.mobile_logo {
+  display: none;
 }
 
 .app {
@@ -1245,7 +1253,7 @@ button:focus {
 .panel {
   position: fixed;
   top: 0;
-  right: -1500px;
+  right: -100vw;
   width: 70%;
   height: 100%;
   padding: 40px;

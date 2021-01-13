@@ -42,20 +42,30 @@
 
         <div class="main">
             <div class="top">
-                <div class="user">
-                    <a href="">
-                        <i class="fas fa-user"></i>
-                        Juan
-                        <i class="fas fa-chevron-circle-down"></i>
+                
+                <div class="mobile_menu">
+                    <a href="" class="menu_trigger">
+                        <i class="fas fa-ellipsis-v"></i>
                     </a>
+                    <img src="./images/firma-seguro-symbol.svg" width="40" alt="">
                 </div>
 
-                <div class="credit">
-                    Saldo $15.000
-                </div>
-
-                <div class="logout">
-                    <button type="submit">Salir <i class="fas fa-sign-out-alt"></i></button>
+                <div class="user_props">
+                    <div class="user">
+                        <a href="">
+                            <i class="fas fa-user"></i>
+                            Juan
+                            <i class="fas fa-chevron-circle-down"></i>
+                        </a>
+                    </div>
+    
+                    <div class="credit">
+                        <span>Saldo</span> $15.000
+                    </div>
+    
+                    <div class="logout">
+                        <a href=""><span>Salir</span> <i class="fas fa-sign-out-alt"></i></a>
+                    </div>
                 </div>
             </div>
 
@@ -107,7 +117,7 @@
                             </form>
                         </div>
 
-                        <table class="table table-striped">
+                        <table class="table table-responsive table-striped">
                             <thead>
                                <tr>
                                    <th>ID de Firma</th>
@@ -126,7 +136,7 @@
                                     <td>3</td>
                                     <td>$25.000</td>
                                     <td>
-                                        <a href="" class="link secundary small">Detalle <i class="fas fa-search"></i></a>
+                                        <a href="" class="link secundary small"><span>Detalle</span> <i class="fas fa-search"></i></a>
                                     </td>
                                 </tr>
                                 <tr>
@@ -136,7 +146,7 @@
                                     <td>2</td>
                                     <td>$15.000</td>
                                     <td>
-                                        <a href="" class="link secundary small">Detalle <i class="fas fa-search"></i></a>
+                                        <a href="" class="link secundary small"><span>Detalle</span> <i class="fas fa-search"></i></a>
                                     </td>
                                 </tr>
                             </tbody> 
@@ -156,6 +166,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js" integrity="sha512-T/tUfKSV1bihCnd+MxKD0Hm1uBBroVYBOYSk1knyvQ9VyZJpc/ALb4P0r6ubwVPSGB2GvjeoMAJJImBG12TiaQ==" crossorigin="anonymous"></script>
+    
+    <!-- Mobile Menu -->
+    <script src="./js/menu.js"></script>
 
     <script>
         $('.datepicker').datepicker({
